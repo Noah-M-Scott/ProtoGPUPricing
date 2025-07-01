@@ -19,20 +19,14 @@ NUM_PRODUCERS = 1  # The number of producer threads to create.
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
 TRACE_FILES = [f"trace_{i}.trace" for i in range(NUM_PRODUCERS)]
 N_MICROSECONDS = 100    # Interval to read from trace file (1000 us = 1 ms).
-M_MICROSECONDS = 500    # Interval to process data and send (5000 us = 5 ms).
+M_MICROSECONDS = 500    # Interval to process data and add to log (5000 us = 5 ms).
 K_ITEMS = 128          # Number of items in the temporary list before sending.
 
 # ==============================================================================
-#  Placeholder Pricing Function
+#  Pricing Function
 # ==============================================================================
 
 def pricing_function(bandwidth: int, compute: int) -> float:
-    """
-    An empty function to calculate a price based on bandwidth and compute.
-    This can be replaced with a real pricing model.
-    For this example, it returns a simple calculated value.
-    """
-    # Example: price is a combination of bandwidth and compute usage
     price = (bandwidth * 0.01) + (compute * 0.005)
     return price
 
