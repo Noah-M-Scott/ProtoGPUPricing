@@ -56,7 +56,7 @@ class ConsumerServer:
         client_active = True
         while client_active and not self.shutdown_event.is_set():
             try:
-                data = conn.recv(4096) # Receive data in chunks
+                data = conn.recv(65536) # Receive data in chunks
                 if data:
                     payload = pickle.loads(data)
                     
