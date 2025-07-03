@@ -16,11 +16,13 @@ PORT = 65432        # Server port to listen on
 
 # --- Producer (Type A) Constants ---
 NUM_PRODUCERS = 1  # The number of producer threads to create.
+NODE_NUMEBER = 0   # Index of the current node
+
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
 TRACE_FILES = [f"trace_{i}.trace" for i in range(NUM_PRODUCERS)]
-N_MICROSECONDS = 100    # Interval to read from trace file (1000 us = 1 ms).
-M_MICROSECONDS = 500    # Interval to process data and add to log (5000 us = 5 ms).
-K_ITEMS = 128          # Number of items in the temporary list before sending.
+N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
+M_MICROSECONDS = 50    # Interval to process data and add to log
+K_ITEMS = 1024         # Number of items in the temporary list before sending.
 
 # ==============================================================================
 #  Pricing Function
@@ -42,7 +44,7 @@ def producer_thread_func(index: int):
     - Periodically processes and sends data to the consumer.
     """
     print(f"[Producer {index}] Starting.")
-    thread_name = f"Producer {index}"
+    thread_name = f"Producer {index + NODE_NUMEBER}"
 
     try:
         # --- File and variable setup ---
@@ -59,60 +61,61 @@ def producer_thread_func(index: int):
         # --- State variables ---
         temp_list = []
         amount_owed = 0.0
-        bandwidth, compute = 0, 0
+        bandwidth, compute, latency = 0, 0, 0
         
-        last_read_time = time.perf_counter()
-        last_process_time = time.perf_counter()
+        last_read_time = time.perf_counter_ns()
+        last_process_time = time.perf_counter_ns()
 
         # --- Main loop ---
         while True:
-            current_time = time.perf_counter()
-
+            current_time = time.perf_counter_ns()
+            
             # --- Task 1: Read from trace file every N microseconds ---
-            if (current_time - last_read_time) * 1_000_000 >= N_MICROSECONDS:
+            if (current_time - last_read_time) / 1000 >= latency:
+            #if int(current_time - last_read_time) >= N_MICROSECONDS:
                 try:
-                    bandwidth = int(next(values))
-                    compute = int(next(values))
-                    # print(f"[{thread_name}] Read: bw={bandwidth}, comp={compute}") # Uncomment for verbose logging
+                    latency = int(next(values))
+                    compute = int(float(next(values)) * 100)
+                    bandwidth = int(float(next(values)) * 100)
+                    #print(f"[{thread_name}] Read: lt={latency}, bw={bandwidth}, comp={compute}") # Uncomment for verbose logging
                     last_read_time = current_time
                 except StopIteration:
                     # End of file reached
                     print(f"[{thread_name}] Reached end of trace file.")
                     break # Exit the main while loop
-
+            
+            
             # --- Task 2: Process and potentially send data every M microseconds ---
-            if (current_time - last_process_time) * 1_000_000 >= M_MICROSECONDS:
-                if bandwidth is not None and compute is not None:
-                    # Accumulate amount owed
-                    amount_owed += pricing_function(bandwidth, compute)
-                    # Add to temporary list
-                    temp_list.append((bandwidth, compute))
-
-                    # Check if the list is ready to be sent
-                    if len(temp_list) >= K_ITEMS:
-                        payload = {
-                            "index": index,
-                            "amountOwed": amount_owed,
-                            "data": temp_list
-                        }
-                        serialized_payload = pickle.dumps(payload)
-                        
-                        print(f"[{thread_name}] Sending batch of {len(temp_list)} items.")
-                        client_socket.sendall(serialized_payload)
-                        
-                        # Reset the temporary list for the next batch
-                        temp_list = []
+            if (current_time - last_process_time) / 1000 >= M_MICROSECONDS:
+                # Accumulate amount owed
+                amount_owed += pricing_function(bandwidth, compute)
+                # Add to temporary list
+                temp_list.append((bandwidth, compute))
                 
                 last_process_time = current_time
-
-            # A small sleep to prevent the loop from busy-waiting and consuming 100% CPU
-            time.sleep(0.0001)
+                
+                # Check if the list is ready to be sent
+                if len(temp_list) >= K_ITEMS:
+                    payload = {
+                        "index": index + NODE_NUMEBER,
+                        "amountOwed": amount_owed,
+                        "data": temp_list
+                    }
+                    serialized_payload = pickle.dumps(payload)
+                    
+                    print(f"[{thread_name}] Sending batch of {len(temp_list)} items.")
+                    client_socket.sendall(serialized_payload)
+                    
+                    # Reset the temporary list for the next batch
+                    temp_list = []
+            
+            
         
         # --- Termination ---
         # Send any remaining data before closing
         if temp_list:
             payload = {
-                "index": index,
+                "index": index + NODE_NUMEBER,
                 "amountOwed": amount_owed,
                 "data": temp_list
             }
