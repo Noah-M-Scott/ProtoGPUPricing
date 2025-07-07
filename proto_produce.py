@@ -112,6 +112,8 @@ def producer_thread_func(index: int):
                     }
                     serialized_payload = pickle.dumps(payload)
                     
+                    data_length = len(serialized_payload)
+                    
                     length_header = struct.pack("!I", data_length) 
                     
                     
@@ -136,6 +138,8 @@ def producer_thread_func(index: int):
                 "data": temp_list
             }
             serialized_payload = pickle.dumps(payload)
+            
+            data_length = len(serialized_payload)
             
             length_header = struct.pack("!I", data_length) 
             
