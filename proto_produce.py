@@ -149,7 +149,11 @@ def producer_thread_func(index: int):
         # Send the "I'm done" message
         print(f"[{thread_name}] Sending 'I'm done' message and shutting down.")
         done_message = pickle.dumps(f"DONE:{index}")
-        client_socket.sendall(done_message)
+        
+        data_length = len(done_message)
+        length_header = struct.pack("!I", data_length) 
+        
+        client_socket.sendall(length_header + done_message)
         client_socket.close()
         print(f"[{thread_name}] Finished.")
         
