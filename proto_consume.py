@@ -16,9 +16,10 @@ PORT = 65432        # Server port to listen on
 
 
 # --- Consumer (Type B) Constants ---
-NUM_PRODUCERS = 1  # The number of producer threads to expect.
+NUM_PRODUCERS = 4  # The number of producer threads to expect (threads per node * nodes).
 X_RECORDS = 64  # Max number of records in the on-disk circular buffer.
 BUFFER_DIR = "circular_buffers" # Directory to store buffer files.
+
 
 # ==============================================================================
 #  Consumer Thread (Type B)
@@ -36,8 +37,10 @@ class ConsumerServer:
         self.port = port
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.producers_done_count = 0
+        self.DROP_COUNTER = 0
         self.lock = threading.Lock() # To protect the done count
         self.buffer_locks = {i: threading.Lock() for i in range(NUM_PRODUCERS)} # Per-file locks
+        self.packet_counts = [0] * NUM_PRODUCERS
         self.shutdown_event = threading.Event()
 
     def _increment_done_count(self):
@@ -56,7 +59,7 @@ class ConsumerServer:
         client_active = True
         while client_active and not self.shutdown_event.is_set():
             try:
-                data = conn.recv(65536) # Receive data in chunks
+                data = conn.recv(2097152) # Receive data in chunks
                 if data:
                     payload = pickle.loads(data)
                     
@@ -84,7 +87,7 @@ class ConsumerServer:
         
         conn.close()
         print(f"[Consumer Handler] Closed connection from {addr}.")
-
+    
     def _process_payload(self, payload: dict):
         """
         Processes a received data payload and writes it to the on-disk buffer.
@@ -92,12 +95,17 @@ class ConsumerServer:
         thread_index = payload['index']
         timestamp = datetime.now().isoformat()
         
+        if self.packet_counts[thread_index] != payload['packet'] :
+            self.DROP_COUNTER += 1
+            print(f"packet dropped {self.DROP_COUNTER} (ignore if followed by DONE)")
+            self.packet_counts[thread_index] = payload['packet']
+        
         record_to_add = {
             "timestamp": timestamp,
             "amountOwed": payload['amountOwed'],
             "data": payload['data']
         }
-
+        
         buffer_file = os.path.join(BUFFER_DIR, f"buffer_{thread_index}.pkl")
         
         # Lock the specific file for this thread to prevent race conditions
