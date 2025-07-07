@@ -136,8 +136,11 @@ def producer_thread_func(index: int):
                 "data": temp_list
             }
             serialized_payload = pickle.dumps(payload)
+            
+            length_header = struct.pack("!I", data_length) 
+            
             print(f"[{thread_name}] Sending final batch of {len(temp_list)} items.")
-            client_socket.sendall(serialized_payload)
+            client_socket.sendall(length_header + serialized_payload)
             
         # Send the "I'm done" message
         print(f"[{thread_name}] Sending 'I'm done' message and shutting down.")
