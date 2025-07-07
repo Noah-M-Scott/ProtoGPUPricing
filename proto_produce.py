@@ -4,6 +4,7 @@ import time
 import pickle
 import os
 import random
+import struct
 from datetime import datetime
 
 # ==============================================================================
@@ -15,7 +16,7 @@ HOST = '127.0.0.1'  # Server host
 PORT = 65432        # Server port to listen on
 
 # --- Producer (Type A) Constants ---
-NUM_PRODUCERS = 8  # The number of producer threads to create.
+NUM_PRODUCERS = 4  # The number of producer threads to create.
 NODE_NUMEBER = 0   # Index of the current node
 
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
@@ -23,7 +24,7 @@ TRACE_FILES = [f"traces/trace_{i}.trace" for i in range(NUM_PRODUCERS)]
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
 M_MICROSECONDS = 50    # Interval to process data and add to log
 K_ITEMS = 131072       # Number of items in the temporary list before sending.
-RUN_TIMES = 100        # Number of times to rerun the trace
+RUN_TIMES = 3          # Number of times to rerun the trace
 
 # ==============================================================================
 #  Pricing Function
@@ -111,8 +112,11 @@ def producer_thread_func(index: int):
                     }
                     serialized_payload = pickle.dumps(payload)
                     
+                    length_header = struct.pack("!I", data_length) 
+                    
+                    
                     print(f"[{thread_name}] Sending batch of {len(temp_list)} items.")
-                    client_socket.sendall(serialized_payload)
+                    client_socket.sendall(length_header + serialized_payload)
                     
                     # Reset the temporary list for the next batch
                     temp_list = []
