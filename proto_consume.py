@@ -61,7 +61,7 @@ class ConsumerServer:
         while client_active and not self.shutdown_event.is_set():
             try:
                 data = conn.recv(4) # Receive data in chunks
-                data_length = struct.unpack("!I", length_header)[0]
+                data_length = struct.unpack("!I", data)[0]
                 
                 received_data = b""
                 while len(received_data) < data_length:
