@@ -16,7 +16,7 @@ PORT = 65432        # Server port to listen on
 
 
 # --- Consumer (Type B) Constants ---
-NUM_PRODUCERS = 4  # The number of producer threads to expect (threads per node * nodes).
+NUM_PRODUCERS = 80  # The number of producer threads to expect (threads per node * nodes).
 X_RECORDS = 64  # Max number of records in the on-disk circular buffer.
 BUFFER_DIR = "circular_buffers" # Directory to store buffer files.
 
