@@ -15,14 +15,15 @@ HOST = '127.0.0.1'  # Server host
 PORT = 65432        # Server port to listen on
 
 # --- Producer (Type A) Constants ---
-NUM_PRODUCERS = 1  # The number of producer threads to create.
+NUM_PRODUCERS = 4  # The number of producer threads to create.
 NODE_NUMEBER = 0   # Index of the current node
 
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
-TRACE_FILES = [f"trace_{i}.trace" for i in range(NUM_PRODUCERS)]
+TRACE_FILES = [f"traces/trace_{i}.trace" for i in range(NUM_PRODUCERS)]
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
 M_MICROSECONDS = 50    # Interval to process data and add to log
-K_ITEMS = 1024         # Number of items in the temporary list before sending.
+K_ITEMS = 131072       # Number of items in the temporary list before sending.
+RUN_TIMES = 3          # Number of times to rerun the trace
 
 # ==============================================================================
 #  Pricing Function
@@ -57,11 +58,11 @@ def producer_thread_func(index: int):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         client_socket.connect((HOST, PORT))
         print(f"[{thread_name}] Connected to consumer at {HOST}:{PORT}")
-
+        
         # --- State variables ---
         temp_list = []
         amount_owed = 0.0
-        bandwidth, compute, latency = 0, 0, 0
+        bandwidth, compute, latency, packet_counter, runs = 0, 0, 0, 0, 0
         
         last_read_time = time.perf_counter_ns()
         last_process_time = time.perf_counter_ns()
@@ -70,7 +71,7 @@ def producer_thread_func(index: int):
         while True:
             current_time = time.perf_counter_ns()
             
-            # --- Task 1: Read from trace file every N microseconds ---
+            # --- Task 1: Read from trace file every N microseconds (or according to a per file per line latency) ---
             if (current_time - last_read_time) / 1000 >= latency:
             #if int(current_time - last_read_time) >= N_MICROSECONDS:
                 try:
@@ -81,8 +82,14 @@ def producer_thread_func(index: int):
                     last_read_time = current_time
                 except StopIteration:
                     # End of file reached
-                    print(f"[{thread_name}] Reached end of trace file.")
-                    break # Exit the main while loop
+                    if runs < RUN_TIMES :
+                        with open(trace_file_name, 'r') as f:
+                            values = iter(f.read().split(','))
+                        runs += 1
+                        print(f"[{thread_name}] Reached end of trace file.")
+                    else:
+                        print(f"[{thread_name}] Has finished runs.")
+                        break # Exit the main while loop
             
             
             # --- Task 2: Process and potentially send data every M microseconds ---
@@ -98,6 +105,7 @@ def producer_thread_func(index: int):
                 if len(temp_list) >= K_ITEMS:
                     payload = {
                         "index": index + NODE_NUMEBER,
+                        "packet": packet_counter,
                         "amountOwed": amount_owed,
                         "data": temp_list
                     }
@@ -108,6 +116,9 @@ def producer_thread_func(index: int):
                     
                     # Reset the temporary list for the next batch
                     temp_list = []
+                    
+                    #next packet
+                    packet_counter += 1
             
             
         
@@ -116,6 +127,7 @@ def producer_thread_func(index: int):
         if temp_list:
             payload = {
                 "index": index + NODE_NUMEBER,
+                "packet":packet_counter,
                 "amountOwed": amount_owed,
                 "data": temp_list
             }
