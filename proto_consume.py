@@ -4,6 +4,7 @@ import time
 import pickle
 import os
 import random
+import struct
 from datetime import datetime
 
 # ==============================================================================
@@ -16,7 +17,7 @@ PORT = 65432        # Server port to listen on
 
 
 # --- Consumer (Type B) Constants ---
-NUM_PRODUCERS = 80  # The number of producer threads to expect (threads per node * nodes).
+NUM_PRODUCERS = 4  # The number of producer threads to expect (threads per node * nodes).
 X_RECORDS = 64  # Max number of records in the on-disk circular buffer.
 BUFFER_DIR = "circular_buffers" # Directory to store buffer files.
 
@@ -59,9 +60,19 @@ class ConsumerServer:
         client_active = True
         while client_active and not self.shutdown_event.is_set():
             try:
-                data = conn.recv(2097152) # Receive data in chunks
-                if data:
-                    payload = pickle.loads(data)
+                data = conn.recv(4) # Receive data in chunks
+                data_length = struct.unpack("!I", length_header)[0]
+                
+                received_data = b""
+                while len(received_data) < data_length:
+                    chunk = conn.recv(data_length - len(received_data))
+                    if not chunk: # Connection closed unexpectedly
+                        break
+                    received_data += chunk
+                
+                
+                if len(received_data) == data_length :
+                    payload = pickle.loads(received_data)
                     
                     # Check for termination message
                     if isinstance(payload, str) and payload.startswith("DONE"):
