@@ -17,7 +17,7 @@ PORT = 65432        # Server port to listen on
 
 
 # --- Consumer (Type B) Constants ---
-NUM_PRODUCERS = 80  # The number of producer threads to expect (threads per node * nodes).
+NUM_PRODUCERS = 4  # The number of producer threads to expect (threads per node * nodes).
 X_RECORDS = 64  # Max number of records in the on-disk circular buffer.
 BUFFER_DIR = "circular_buffers" # Directory to store buffer files.
 
@@ -78,6 +78,7 @@ class ConsumerServer:
                     if isinstance(payload, str) and payload.startswith("DONE"):
                         client_active = False
                         self._increment_done_count()
+                        break
                     else:
                         self._process_payload(payload)
 
@@ -108,8 +109,10 @@ class ConsumerServer:
         
         if self.packet_counts[thread_index] != payload['packet'] :
             self.DROP_COUNTER += 1
-            print(f"packet dropped {self.DROP_COUNTER} (ignore if followed by DONE)")
+            print(f"packet dropped {self.DROP_COUNTER} on {thread_index} got {payload['packet']} wanted {self.packet_counts[thread_index]} (ignore if followed by DONE)")
             self.packet_counts[thread_index] = payload['packet']
+        else:
+            self.packet_counts[thread_index] += 1
         
         record_to_add = {
             "timestamp": timestamp,
