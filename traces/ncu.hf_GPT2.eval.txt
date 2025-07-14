@@ -1,0 +1,295 @@
+Kernel                                                 Latency Tensor   DRAM
+elementwise_kernel_with_index                     |       4256   0.00   0.00
+indexSelectLargeIndex                             |      21472   0.01   0.04
+indexSelectLargeIndex                             |      20448   0.01   0.04
+vectorized_elementwise_kernel                     |       7488   0.00   0.21
+vectorized_layer_norm_kernel                      |      12736   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44576   0.45   0.06
+Kernel                                            |      81472   0.11   0.06
+vectorized_elementwise_kernel                     |       3872   0.00   0.00
+elementwise_kernel                                |      79456   0.06   0.23
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+elementwise_kernel                                |      86080   0.04   0.22
+softmax_warp_forward                              |      88288   0.01   0.19
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30240   0.29   0.44
+elementwise_kernel                                |      10912   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21600   0.31   0.06
+vectorized_elementwise_kernel                     |       7552   0.00   0.21
+vectorized_layer_norm_kernel                      |      13024   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45664   0.58   0.07
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      12640   0.00   0.25
+vectorized_elementwise_kernel                     |      12320   0.00   0.25
+vectorized_elementwise_kernel                     |      15136   0.00   0.41
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+vectorized_elementwise_kernel                     |      15648   0.03   0.20
+vectorized_elementwise_kernel                     |      12224   0.00   0.25
+vectorized_elementwise_kernel                     |      15040   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51168   0.52   0.11
+vectorized_elementwise_kernel                     |       7552   0.00   0.21
+vectorized_layer_norm_kernel                      |      12896   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      43808   0.45   0.06
+Kernel                                            |      81536   0.11   0.06
+vectorized_elementwise_kernel                     |       3904   0.00   0.00
+elementwise_kernel                                |      79296   0.06   0.23
+vectorized_elementwise_kernel                     |       3808   0.00   0.00
+elementwise_kernel                                |      86432   0.04   0.22
+softmax_warp_forward                              |      87968   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30304   0.29   0.43
+elementwise_kernel                                |      10880   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21184   0.31   0.06
+vectorized_elementwise_kernel                     |       7520   0.00   0.21
+vectorized_layer_norm_kernel                      |      13056   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45600   0.58   0.07
+vectorized_elementwise_kernel                     |      12480   0.00   0.25
+vectorized_elementwise_kernel                     |      12448   0.00   0.25
+vectorized_elementwise_kernel                     |      12192   0.00   0.26
+vectorized_elementwise_kernel                     |      15328   0.00   0.40
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+vectorized_elementwise_kernel                     |      15872   0.03   0.20
+vectorized_elementwise_kernel                     |      12256   0.00   0.25
+vectorized_elementwise_kernel                     |      15040   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51008   0.52   0.11
+vectorized_elementwise_kernel                     |       7520   0.00   0.21
+vectorized_layer_norm_kernel                      |      13056   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44544   0.45   0.06
+Kernel                                            |      81632   0.11   0.06
+vectorized_elementwise_kernel                     |       3968   0.00   0.00
+elementwise_kernel                                |      79040   0.06   0.23
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+elementwise_kernel                                |      85984   0.04   0.22
+softmax_warp_forward                              |      87968   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30176   0.29   0.44
+elementwise_kernel                                |      10912   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21120   0.31   0.06
+vectorized_elementwise_kernel                     |       7520   0.00   0.21
+vectorized_layer_norm_kernel                      |      12704   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      46112   0.57   0.07
+vectorized_elementwise_kernel                     |      12256   0.00   0.25
+vectorized_elementwise_kernel                     |      12416   0.00   0.25
+vectorized_elementwise_kernel                     |      12192   0.00   0.25
+vectorized_elementwise_kernel                     |      15456   0.00   0.40
+vectorized_elementwise_kernel                     |      12160   0.00   0.25
+vectorized_elementwise_kernel                     |      15744   0.03   0.20
+vectorized_elementwise_kernel                     |      12224   0.00   0.25
+vectorized_elementwise_kernel                     |      15136   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51040   0.52   0.11
+vectorized_elementwise_kernel                     |       7488   0.00   0.21
+vectorized_layer_norm_kernel                      |      12960   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44256   0.45   0.06
+Kernel                                            |      81408   0.11   0.06
+vectorized_elementwise_kernel                     |       4096   0.00   0.00
+elementwise_kernel                                |      79168   0.06   0.23
+vectorized_elementwise_kernel                     |       3808   0.00   0.00
+elementwise_kernel                                |      86368   0.04   0.22
+softmax_warp_forward                              |      89056   0.01   0.19
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30400   0.29   0.43
+elementwise_kernel                                |      10848   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      20896   0.32   0.07
+vectorized_elementwise_kernel                     |       7520   0.00   0.21
+vectorized_layer_norm_kernel                      |      12832   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45664   0.58   0.07
+vectorized_elementwise_kernel                     |      12320   0.00   0.25
+vectorized_elementwise_kernel                     |      12544   0.00   0.25
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+vectorized_elementwise_kernel                     |      15200   0.00   0.41
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+vectorized_elementwise_kernel                     |      15808   0.03   0.20
+vectorized_elementwise_kernel                     |      12192   0.00   0.25
+vectorized_elementwise_kernel                     |      14944   0.00   0.42
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51328   0.52   0.11
+vectorized_elementwise_kernel                     |       7424   0.00   0.21
+vectorized_layer_norm_kernel                      |      12704   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44032   0.45   0.06
+Kernel                                            |      81472   0.11   0.06
+vectorized_elementwise_kernel                     |       3872   0.00   0.00
+elementwise_kernel                                |      79552   0.06   0.23
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+elementwise_kernel                                |      86048   0.04   0.22
+softmax_warp_forward                              |      87392   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30304   0.29   0.43
+elementwise_kernel                                |      10944   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21184   0.31   0.06
+vectorized_elementwise_kernel                     |       7552   0.00   0.21
+vectorized_layer_norm_kernel                      |      12736   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45568   0.58   0.07
+vectorized_elementwise_kernel                     |      12320   0.00   0.25
+vectorized_elementwise_kernel                     |      12416   0.00   0.25
+vectorized_elementwise_kernel                     |      12192   0.00   0.26
+vectorized_elementwise_kernel                     |      15168   0.00   0.41
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      15872   0.03   0.20
+vectorized_elementwise_kernel                     |      12224   0.00   0.25
+vectorized_elementwise_kernel                     |      14816   0.00   0.42
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51328   0.52   0.11
+vectorized_elementwise_kernel                     |       7424   0.00   0.21
+vectorized_layer_norm_kernel                      |      13088   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44384   0.45   0.06
+Kernel                                            |      81696   0.11   0.06
+vectorized_elementwise_kernel                     |       3872   0.00   0.00
+elementwise_kernel                                |      79200   0.06   0.23
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+elementwise_kernel                                |      85920   0.04   0.22
+softmax_warp_forward                              |      87552   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30016   0.29   0.44
+elementwise_kernel                                |      10944   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21120   0.31   0.06
+vectorized_elementwise_kernel                     |       7488   0.00   0.21
+vectorized_layer_norm_kernel                      |      12768   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45632   0.58   0.07
+vectorized_elementwise_kernel                     |      12320   0.00   0.25
+vectorized_elementwise_kernel                     |      12480   0.00   0.25
+vectorized_elementwise_kernel                     |      12160   0.00   0.25
+vectorized_elementwise_kernel                     |      15296   0.00   0.41
+vectorized_elementwise_kernel                     |      12160   0.00   0.26
+vectorized_elementwise_kernel                     |      15840   0.03   0.20
+vectorized_elementwise_kernel                     |      12192   0.00   0.25
+vectorized_elementwise_kernel                     |      15008   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51520   0.51   0.11
+vectorized_elementwise_kernel                     |       7424   0.00   0.21
+vectorized_layer_norm_kernel                      |      12736   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      43616   0.46   0.06
+Kernel                                            |      81184   0.11   0.06
+vectorized_elementwise_kernel                     |       3872   0.00   0.00
+elementwise_kernel                                |      79424   0.06   0.23
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+elementwise_kernel                                |      86176   0.04   0.22
+softmax_warp_forward                              |      88096   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30144   0.29   0.44
+elementwise_kernel                                |      10880   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21056   0.31   0.06
+vectorized_elementwise_kernel                     |       7584   0.00   0.21
+vectorized_layer_norm_kernel                      |      13024   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45664   0.58   0.07
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      12384   0.00   0.25
+vectorized_elementwise_kernel                     |      12192   0.00   0.25
+vectorized_elementwise_kernel                     |      15168   0.00   0.41
+vectorized_elementwise_kernel                     |      12160   0.00   0.26
+vectorized_elementwise_kernel                     |      15744   0.03   0.20
+vectorized_elementwise_kernel                     |      12224   0.00   0.25
+vectorized_elementwise_kernel                     |      14976   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      50976   0.52   0.11
+vectorized_elementwise_kernel                     |       7360   0.00   0.21
+vectorized_layer_norm_kernel                      |      12864   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44384   0.45   0.06
+Kernel                                            |      81344   0.11   0.06
+vectorized_elementwise_kernel                     |       3840   0.00   0.00
+elementwise_kernel                                |      79104   0.06   0.23
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+elementwise_kernel                                |      85728   0.04   0.22
+softmax_warp_forward                              |      88608   0.01   0.19
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      29984   0.29   0.44
+elementwise_kernel                                |      10880   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      20864   0.32   0.07
+vectorized_elementwise_kernel                     |       7392   0.00   0.21
+vectorized_layer_norm_kernel                      |      12960   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45504   0.58   0.07
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      12352   0.00   0.25
+vectorized_elementwise_kernel                     |      12160   0.00   0.25
+vectorized_elementwise_kernel                     |      15168   0.00   0.41
+vectorized_elementwise_kernel                     |      12160   0.00   0.26
+vectorized_elementwise_kernel                     |      15744   0.03   0.20
+vectorized_elementwise_kernel                     |      12256   0.00   0.25
+vectorized_elementwise_kernel                     |      15040   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51392   0.52   0.11
+vectorized_elementwise_kernel                     |       7424   0.00   0.21
+vectorized_layer_norm_kernel                      |      12960   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44448   0.45   0.06
+Kernel                                            |      81376   0.11   0.06
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+elementwise_kernel                                |      79520   0.06   0.23
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+elementwise_kernel                                |      86176   0.04   0.22
+softmax_warp_forward                              |      87296   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30272   0.29   0.43
+elementwise_kernel                                |      10848   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21184   0.31   0.06
+vectorized_elementwise_kernel                     |       7552   0.00   0.21
+vectorized_layer_norm_kernel                      |      12992   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45664   0.58   0.07
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      12416   0.00   0.25
+vectorized_elementwise_kernel                     |      12160   0.00   0.25
+vectorized_elementwise_kernel                     |      15392   0.00   0.40
+vectorized_elementwise_kernel                     |      12352   0.00   0.25
+vectorized_elementwise_kernel                     |      15712   0.03   0.20
+vectorized_elementwise_kernel                     |      12192   0.00   0.26
+vectorized_elementwise_kernel                     |      15200   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      50720   0.52   0.11
+vectorized_elementwise_kernel                     |       7520   0.00   0.21
+vectorized_layer_norm_kernel                      |      12832   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      44160   0.45   0.06
+Kernel                                            |      81376   0.11   0.06
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+elementwise_kernel                                |      79360   0.06   0.23
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+elementwise_kernel                                |      85984   0.04   0.22
+softmax_warp_forward                              |      87936   0.01   0.19
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30400   0.29   0.43
+elementwise_kernel                                |      11136   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21408   0.31   0.06
+vectorized_elementwise_kernel                     |       7456   0.00   0.21
+vectorized_layer_norm_kernel                      |      12768   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45696   0.58   0.07
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      12480   0.00   0.25
+vectorized_elementwise_kernel                     |      12224   0.00   0.25
+vectorized_elementwise_kernel                     |      15296   0.00   0.40
+vectorized_elementwise_kernel                     |      12160   0.00   0.26
+vectorized_elementwise_kernel                     |      15872   0.03   0.20
+vectorized_elementwise_kernel                     |      12256   0.00   0.25
+vectorized_elementwise_kernel                     |      14976   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51488   0.51   0.11
+vectorized_elementwise_kernel                     |       7488   0.00   0.21
+vectorized_layer_norm_kernel                      |      12992   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      43968   0.45   0.06
+Kernel                                            |      81344   0.11   0.06
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+elementwise_kernel                                |      79232   0.06   0.23
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+elementwise_kernel                                |      85760   0.04   0.22
+softmax_warp_forward                              |      87424   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30432   0.29   0.43
+elementwise_kernel                                |      10976   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      21152   0.31   0.06
+vectorized_elementwise_kernel                     |       7648   0.00   0.20
+vectorized_layer_norm_kernel                      |      12832   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45568   0.58   0.07
+vectorized_elementwise_kernel                     |      12256   0.00   0.25
+vectorized_elementwise_kernel                     |      12416   0.00   0.25
+vectorized_elementwise_kernel                     |      12320   0.00   0.25
+vectorized_elementwise_kernel                     |      15040   0.00   0.41
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+vectorized_elementwise_kernel                     |      15808   0.03   0.20
+vectorized_elementwise_kernel                     |      12224   0.00   0.25
+vectorized_elementwise_kernel                     |      15168   0.00   0.41
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51264   0.52   0.11
+vectorized_elementwise_kernel                     |       7456   0.00   0.21
+vectorized_layer_norm_kernel                      |      12928   0.01   0.06
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      43456   0.46   0.06
+Kernel                                            |      81280   0.11   0.06
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+elementwise_kernel                                |      79104   0.06   0.23
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+elementwise_kernel                                |      85888   0.04   0.22
+softmax_warp_forward                              |      87520   0.01   0.20
+ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg...|      30240   0.29   0.44
+elementwise_kernel                                |      10912   0.02   0.07
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      20832   0.32   0.07
+vectorized_elementwise_kernel                     |       7456   0.00   0.21
+vectorized_layer_norm_kernel                      |      12928   0.01   0.06
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|      45504   0.58   0.07
+vectorized_elementwise_kernel                     |      12288   0.00   0.25
+vectorized_elementwise_kernel                     |      12416   0.00   0.25
+vectorized_elementwise_kernel                     |      12192   0.00   0.25
+vectorized_elementwise_kernel                     |      15424   0.00   0.40
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+vectorized_elementwise_kernel                     |      15712   0.03   0.20
+vectorized_elementwise_kernel                     |      12160   0.00   0.26
+vectorized_elementwise_kernel                     |      14752   0.00   0.42
+ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2...|      51744   0.51   0.10
+vectorized_elementwise_kernel                     |       7520   0.00   0.21
+vectorized_layer_norm_kernel                      |      12992   0.01   0.06
+Kernel                                            |    1968928   0.22   0.04

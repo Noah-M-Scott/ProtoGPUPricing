@@ -1,0 +1,166 @@
+Kernel                                                 Latency Tensor   DRAM
+cudnn::ops::nchwToNhwcKernel                      |      43680   0.00   0.03
+cudnn::ops::nchwToNhwcKernel                      |       5600   0.00   0.00
+sm80_xmma_fprop_image_first_layer_f16f16_f32_f1...|      68480   0.26   0.02
+cudnn::ops::nhwcToNchwKernel                      |      28096   0.00   0.24
+unrolled_elementwise_kernel                       |       5472   0.00   0.00
+vectorized_elementwise_kernel                     |       4736   0.00   0.00
+batch_norm_transform_input_kernel                 |      46208   0.00   0.14
+vectorized_elementwise_kernel                     |      20448   0.00   0.31
+max_pool_forward_nchw                             |      74080   0.01   0.09
+cudnn::ops::nchwToNhwcKernel                      |      11424   0.00   0.14
+cudnn::ops::nchwToNhwcKernel                      |       6688   0.00   0.01
+cutlass_cudnn_infer::Kernel                       |      33152   0.31   0.05
+cudnn::ops::nhwcToNchwKernel                      |      11040   0.00   0.14
+unrolled_elementwise_kernel                       |       5344   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+batch_norm_transform_input_kernel                 |      17664   0.00   0.09
+vectorized_elementwise_kernel                     |       8864   0.00   0.18
+cudnn::ops::nchwToNhwcKernel                      |      11232   0.00   0.14
+cudnn::ops::nchwToNhwcKernel                      |       6208   0.00   0.01
+cutlass_cudnn_infer::Kernel                       |      32000   0.32   0.05
+cudnn::ops::nhwcToNchwKernel                      |      11040   0.00   0.14
+unrolled_elementwise_kernel                       |       5184   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+batch_norm_transform_input_kernel                 |      17056   0.00   0.09
+vectorized_elementwise_kernel                     |      10240   0.00   0.31
+vectorized_elementwise_kernel                     |       8864   0.00   0.18
+cudnn::ops::nchwToNhwcKernel                      |      11328   0.00   0.14
+cudnn::ops::nchwToNhwcKernel                      |       6304   0.00   0.01
+cutlass_cudnn_infer::Kernel                       |      32608   0.31   0.05
+cudnn::ops::nhwcToNchwKernel                      |      10944   0.00   0.14
+unrolled_elementwise_kernel                       |       5152   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+batch_norm_transform_input_kernel                 |      17472   0.00   0.09
+vectorized_elementwise_kernel                     |       8704   0.00   0.18
+cudnn::ops::nchwToNhwcKernel                      |      11264   0.00   0.14
+cudnn::ops::nchwToNhwcKernel                      |       6432   0.00   0.01
+cutlass_cudnn_infer::Kernel                       |      31680   0.32   0.05
+cudnn::ops::nhwcToNchwKernel                      |      11200   0.00   0.14
+unrolled_elementwise_kernel                       |       5152   0.00   0.00
+vectorized_elementwise_kernel                     |       4672   0.00   0.00
+batch_norm_transform_input_kernel                 |      17984   0.00   0.09
+vectorized_elementwise_kernel                     |      10464   0.00   0.30
+vectorized_elementwise_kernel                     |       8672   0.00   0.18
+cudnn::ops::nchwToNhwcKernel                      |      11392   0.00   0.14
+cudnn::ops::nchwToNhwcKernel                      |       6528   0.00   0.01
+sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f1...|      24800   0.20   0.07
+cudnn::ops::nhwcToNchwKernel                      |       7936   0.00   0.10
+unrolled_elementwise_kernel                       |       5216   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+batch_norm_transform_input_kernel                 |      12288   0.00   0.06
+vectorized_elementwise_kernel                     |       6944   0.00   0.11
+cudnn::ops::nchwToNhwcKernel                      |       8032   0.00   0.10
+cudnn::ops::nchwToNhwcKernel                      |       6880   0.00   0.02
+sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f1...|      35232   0.29   0.03
+cudnn::ops::nhwcToNchwKernel                      |       7968   0.00   0.10
+unrolled_elementwise_kernel                       |       4992   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+batch_norm_transform_input_kernel                 |      12480   0.00   0.06
+cudnn::ops::nchwToNhwcKernel                      |      11264   0.00   0.14
+sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f...|      12288   0.05   0.03
+cudnn::ops::nhwcToNchwKernel                      |       7936   0.00   0.10
+unrolled_elementwise_kernel                       |       4992   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+batch_norm_transform_input_kernel                 |      12608   0.00   0.06
+vectorized_elementwise_kernel                     |       7392   0.00   0.21
+vectorized_elementwise_kernel                     |       7040   0.00   0.11
+cudnn::ops::nchwToNhwcKernel                      |       8000   0.00   0.10
+cudnn::ops::nchwToNhwcKernel                      |       6912   0.00   0.02
+sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f1...|      34368   0.29   0.03
+cudnn::ops::nhwcToNchwKernel                      |       8000   0.00   0.10
+unrolled_elementwise_kernel                       |       5280   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+batch_norm_transform_input_kernel                 |      12544   0.00   0.06
+vectorized_elementwise_kernel                     |       6880   0.00   0.12
+cudnn::ops::nchwToNhwcKernel                      |       8224   0.00   0.10
+cudnn::ops::nchwToNhwcKernel                      |       6848   0.00   0.02
+sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f1...|      35392   0.29   0.03
+cudnn::ops::nhwcToNchwKernel                      |       8096   0.00   0.10
+unrolled_elementwise_kernel                       |       5120   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+batch_norm_transform_input_kernel                 |      12384   0.00   0.06
+vectorized_elementwise_kernel                     |       7584   0.00   0.21
+vectorized_elementwise_kernel                     |       6880   0.00   0.12
+cudnn::ops::nchwToNhwcKernel                      |       8032   0.00   0.10
+cudnn::ops::nchwToNhwcKernel                      |       9536   0.00   0.03
+sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f1...|      24512   0.22   0.04
+cudnn::ops::nhwcToNchwKernel                      |       6752   0.00   0.06
+unrolled_elementwise_kernel                       |       5856   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+batch_norm_transform_input_kernel                 |       9632   0.00   0.04
+vectorized_elementwise_kernel                     |       5792   0.00   0.07
+cudnn::ops::nchwToNhwcKernel                      |       7040   0.00   0.06
+cudnn::ops::nchwToNhwcKernel                      |      12576   0.00   0.05
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      36864   0.29   0.03
+cudnn::ops::nhwcToNchwKernel                      |       6720   0.00   0.06
+unrolled_elementwise_kernel                       |       6688   0.00   0.00
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+batch_norm_transform_input_kernel                 |       9632   0.00   0.04
+cudnn::ops::nchwToNhwcKernel                      |       8160   0.00   0.10
+sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f1...|      11680   0.05   0.02
+cudnn::ops::nhwcToNchwKernel                      |       6624   0.00   0.06
+unrolled_elementwise_kernel                       |       6272   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+batch_norm_transform_input_kernel                 |       9664   0.00   0.04
+vectorized_elementwise_kernel                     |       6240   0.00   0.13
+vectorized_elementwise_kernel                     |       5888   0.00   0.07
+cudnn::ops::nchwToNhwcKernel                      |       7072   0.00   0.06
+cudnn::ops::nchwToNhwcKernel                      |      12512   0.00   0.05
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      36608   0.29   0.03
+cudnn::ops::nhwcToNchwKernel                      |       6848   0.00   0.06
+unrolled_elementwise_kernel                       |       6048   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+batch_norm_transform_input_kernel                 |       9632   0.00   0.04
+vectorized_elementwise_kernel                     |       5856   0.00   0.07
+cudnn::ops::nchwToNhwcKernel                      |       7168   0.00   0.06
+cudnn::ops::nchwToNhwcKernel                      |      12480   0.00   0.05
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      36128   0.30   0.03
+cudnn::ops::nhwcToNchwKernel                      |       6720   0.00   0.06
+unrolled_elementwise_kernel                       |       6496   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+batch_norm_transform_input_kernel                 |       9824   0.00   0.04
+vectorized_elementwise_kernel                     |       6240   0.00   0.13
+vectorized_elementwise_kernel                     |       6048   0.00   0.07
+cudnn::ops::nchwToNhwcKernel                      |       7328   0.00   0.05
+cudnn::ops::nchwToNhwcKernel                      |      20000   0.00   0.06
+cutlass_cudnn_infer::Kernel                       |      26112   0.22   0.06
+cudnn::ops::nhwcToNchwKernel                      |       6336   0.00   0.03
+unrolled_elementwise_kernel                       |       8704   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+batch_norm_transform_input_kernel                 |      10816   0.00   0.02
+vectorized_elementwise_kernel                     |       5280   0.00   0.04
+cudnn::ops::nchwToNhwcKernel                      |       6656   0.00   0.03
+cudnn::ops::nchwToNhwcKernel                      |      33568   0.00   0.07
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      60160   0.22   0.04
+cudnn::ops::nhwcToNchwKernel                      |       6368   0.00   0.03
+unrolled_elementwise_kernel                       |       7744   0.00   0.00
+vectorized_elementwise_kernel                     |       4192   0.00   0.00
+batch_norm_transform_input_kernel                 |      11104   0.00   0.02
+cudnn::ops::nchwToNhwcKernel                      |       7136   0.00   0.06
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      12704   0.06   0.02
+cudnn::ops::nhwcToNchwKernel                      |       6368   0.00   0.03
+unrolled_elementwise_kernel                       |       7616   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+batch_norm_transform_input_kernel                 |      11200   0.00   0.02
+vectorized_elementwise_kernel                     |       5248   0.00   0.08
+vectorized_elementwise_kernel                     |       5216   0.00   0.04
+cudnn::ops::nchwToNhwcKernel                      |       6784   0.00   0.03
+cudnn::ops::nchwToNhwcKernel                      |      33376   0.00   0.07
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      59776   0.22   0.04
+cudnn::ops::nhwcToNchwKernel                      |       6336   0.00   0.03
+unrolled_elementwise_kernel                       |       7744   0.00   0.00
+vectorized_elementwise_kernel                     |       4672   0.00   0.00
+batch_norm_transform_input_kernel                 |      10944   0.00   0.02
+vectorized_elementwise_kernel                     |       5280   0.00   0.04
+cudnn::ops::nchwToNhwcKernel                      |       6848   0.00   0.03
+cudnn::ops::nchwToNhwcKernel                      |      32928   0.00   0.07
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|      60000   0.22   0.04
+cudnn::ops::nhwcToNchwKernel                      |       6400   0.00   0.03
+unrolled_elementwise_kernel                       |       8544   0.00   0.00
+vectorized_elementwise_kernel                     |       4800   0.00   0.00
+batch_norm_transform_input_kernel                 |      10688   0.00   0.02
+vectorized_elementwise_kernel                     |       5376   0.00   0.07
+vectorized_elementwise_kernel                     |       5344   0.00   0.04
+reduce_kernel                                     |      10272   0.01   0.02
+ampere_fp16_s16816gemm_fp16_64x64_ldg8_relu_f2f...|      12896   0.03   0.04

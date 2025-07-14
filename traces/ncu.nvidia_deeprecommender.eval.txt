@@ -1,0 +1,15 @@
+Kernel                                                 Latency Tensor   DRAM
+Kernel                                            |    1511008   0.38   0.20
+vectorized_elementwise_kernel                     |       6080   0.01   0.04
+Kernel                                            |      13664   0.11   0.06
+splitKreduce_kernel                               |       7776   0.01   0.07
+vectorized_elementwise_kernel                     |       5984   0.01   0.04
+Kernel                                            |      18272   0.16   0.07
+vectorized_elementwise_kernel                     |       6656   0.01   0.08
+Kernel                                            |      25792   0.11   0.06
+vectorized_elementwise_kernel                     |       6016   0.01   0.04
+Kernel                                            |      12832   0.12   0.06
+splitKreduce_kernel                               |       7936   0.01   0.07
+vectorized_elementwise_kernel                     |       5984   0.01   0.04
+Kernel                                            |    1243296   0.46   0.25
+vectorized_elementwise_kernel                     |     258560   0.03   0.74

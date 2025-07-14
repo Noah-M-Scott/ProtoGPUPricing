@@ -1,0 +1,411 @@
+Kernel                                                 Latency Tensor   DRAM
+cudnn::ops::nchwToNhwcKernel                      |     157568   0.00   0.03
+cudnn::ops::nchwToNhwcKernel                      |      36192   0.00   0.02
+sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f...|     956160   0.08   0.01
+cudnn::ops::nhwcToNchwKernel                      |      43616   0.00   0.38
+elementwise_kernel                                |      86048   0.05   0.16
+CatArrayBatchedCopy                               |     240416   0.00   0.07
+elementwise_kernel                                |      73536   0.03   0.23
+vectorized_layer_norm_kernel                      |      75424   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898048   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     280288   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256896   0.70   0.14
+vectorized_elementwise_kernel                     |      42432   0.00   0.68
+vectorized_layer_norm_kernel                      |      75264   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1274592   0.63   0.14
+vectorized_elementwise_kernel                     |     213088   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965824   0.83   0.12
+vectorized_elementwise_kernel                     |      42752   0.00   0.68
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896256   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278304   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257024   0.70   0.15
+vectorized_elementwise_kernel                     |      43424   0.00   0.67
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273920   0.63   0.14
+vectorized_elementwise_kernel                     |     213248   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966496   0.83   0.12
+vectorized_elementwise_kernel                     |      42080   0.00   0.69
+vectorized_layer_norm_kernel                      |      75424   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     900256   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276800   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256448   0.71   0.15
+vectorized_elementwise_kernel                     |      42528   0.00   0.68
+vectorized_layer_norm_kernel                      |      75264   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273440   0.63   0.14
+vectorized_elementwise_kernel                     |     212896   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966656   0.83   0.12
+vectorized_elementwise_kernel                     |      42496   0.00   0.68
+vectorized_layer_norm_kernel                      |      75264   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     900064   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278656   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257056   0.70   0.15
+vectorized_elementwise_kernel                     |      43008   0.00   0.67
+vectorized_layer_norm_kernel                      |      75168   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1274304   0.63   0.14
+vectorized_elementwise_kernel                     |     212992   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965440   0.83   0.12
+vectorized_elementwise_kernel                     |      42272   0.00   0.69
+vectorized_layer_norm_kernel                      |      75424   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     900352   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277152   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256896   0.70   0.15
+vectorized_elementwise_kernel                     |      42464   0.00   0.68
+vectorized_layer_norm_kernel                      |      75488   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273472   0.63   0.14
+vectorized_elementwise_kernel                     |     213312   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     968192   0.83   0.12
+vectorized_elementwise_kernel                     |      42016   0.00   0.69
+vectorized_layer_norm_kernel                      |      74944   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898112   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277920   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257056   0.70   0.15
+vectorized_elementwise_kernel                     |      42240   0.00   0.69
+vectorized_layer_norm_kernel                      |      75264   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272032   0.63   0.14
+vectorized_elementwise_kernel                     |     213184   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967776   0.83   0.12
+vectorized_elementwise_kernel                     |      42240   0.00   0.69
+vectorized_layer_norm_kernel                      |      74976   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     899808   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     279360   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256512   0.70   0.15
+vectorized_elementwise_kernel                     |      42560   0.00   0.68
+vectorized_layer_norm_kernel                      |      75168   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1276512   0.63   0.14
+vectorized_elementwise_kernel                     |     213184   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967648   0.83   0.12
+vectorized_elementwise_kernel                     |      42368   0.00   0.68
+vectorized_layer_norm_kernel                      |      74976   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898080   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     279168   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256864   0.70   0.15
+vectorized_elementwise_kernel                     |      42528   0.00   0.68
+vectorized_layer_norm_kernel                      |      75584   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1274080   0.63   0.14
+vectorized_elementwise_kernel                     |     212928   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966656   0.83   0.12
+vectorized_elementwise_kernel                     |      42048   0.00   0.69
+vectorized_layer_norm_kernel                      |      75232   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898336   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277952   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256416   0.71   0.15
+vectorized_elementwise_kernel                     |      42048   0.00   0.69
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273184   0.63   0.14
+vectorized_elementwise_kernel                     |     213056   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967584   0.83   0.12
+vectorized_elementwise_kernel                     |      41984   0.00   0.69
+vectorized_layer_norm_kernel                      |      75328   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     900448   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     280160   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     258464   0.70   0.15
+vectorized_elementwise_kernel                     |      42464   0.00   0.68
+vectorized_layer_norm_kernel                      |      75040   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273760   0.63   0.14
+vectorized_elementwise_kernel                     |     212928   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966176   0.83   0.12
+vectorized_elementwise_kernel                     |      42720   0.00   0.68
+vectorized_layer_norm_kernel                      |      75488   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     899712   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278752   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255712   0.71   0.15
+vectorized_elementwise_kernel                     |      42112   0.00   0.69
+vectorized_layer_norm_kernel                      |      75360   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273664   0.63   0.14
+vectorized_elementwise_kernel                     |     213024   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     968096   0.83   0.12
+vectorized_elementwise_kernel                     |      42048   0.00   0.69
+vectorized_layer_norm_kernel                      |      75456   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896480   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278048   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256960   0.70   0.15
+vectorized_elementwise_kernel                     |      42816   0.00   0.68
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1275520   0.63   0.14
+vectorized_elementwise_kernel                     |     212992   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966336   0.83   0.12
+vectorized_elementwise_kernel                     |      42560   0.00   0.68
+vectorized_layer_norm_kernel                      |      74912   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     899168   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278144   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256960   0.70   0.15
+vectorized_elementwise_kernel                     |      42400   0.00   0.68
+vectorized_layer_norm_kernel                      |      75104   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273504   0.63   0.14
+vectorized_elementwise_kernel                     |     213248   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967616   0.83   0.12
+vectorized_elementwise_kernel                     |      42560   0.00   0.68
+vectorized_layer_norm_kernel                      |      75232   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896928   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277920   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256864   0.70   0.15
+vectorized_elementwise_kernel                     |      41952   0.00   0.69
+vectorized_layer_norm_kernel                      |      75520   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273728   0.63   0.14
+vectorized_elementwise_kernel                     |     213152   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966368   0.83   0.12
+vectorized_elementwise_kernel                     |      42208   0.00   0.69
+vectorized_layer_norm_kernel                      |      75104   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896032   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     279424   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256320   0.71   0.15
+vectorized_elementwise_kernel                     |      42336   0.00   0.68
+vectorized_layer_norm_kernel                      |      74976   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1275008   0.63   0.14
+vectorized_elementwise_kernel                     |     213088   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967264   0.83   0.12
+vectorized_elementwise_kernel                     |      41888   0.00   0.69
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898528   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277728   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257120   0.70   0.15
+vectorized_elementwise_kernel                     |      42624   0.00   0.68
+vectorized_layer_norm_kernel                      |      75200   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1275488   0.63   0.14
+vectorized_elementwise_kernel                     |     212992   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     968416   0.83   0.12
+vectorized_elementwise_kernel                     |      42528   0.00   0.68
+vectorized_layer_norm_kernel                      |      75360   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     900128   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277792   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256992   0.70   0.15
+vectorized_elementwise_kernel                     |      42272   0.00   0.68
+vectorized_layer_norm_kernel                      |      74944   0.02   0.21
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1271520   0.63   0.14
+vectorized_elementwise_kernel                     |     213120   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967968   0.83   0.12
+vectorized_elementwise_kernel                     |      42816   0.00   0.68
+vectorized_layer_norm_kernel                      |      75392   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898656   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     279168   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256640   0.70   0.15
+vectorized_elementwise_kernel                     |      41984   0.00   0.69
+vectorized_layer_norm_kernel                      |      74976   0.02   0.21
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272736   0.63   0.14
+vectorized_elementwise_kernel                     |     212928   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966144   0.83   0.12
+vectorized_elementwise_kernel                     |      42368   0.00   0.68
+vectorized_layer_norm_kernel                      |      75008   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898496   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     280096   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257856   0.70   0.15
+vectorized_elementwise_kernel                     |      42208   0.00   0.69
+vectorized_layer_norm_kernel                      |      75104   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1274944   0.63   0.14
+vectorized_elementwise_kernel                     |     213248   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966080   0.83   0.12
+vectorized_elementwise_kernel                     |      42944   0.00   0.68
+vectorized_layer_norm_kernel                      |      74944   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896864   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277696   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255744   0.71   0.15
+vectorized_elementwise_kernel                     |      42752   0.00   0.68
+vectorized_layer_norm_kernel                      |      74880   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1274240   0.63   0.14
+vectorized_elementwise_kernel                     |     213216   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967200   0.83   0.12
+vectorized_elementwise_kernel                     |      41728   0.00   0.70
+vectorized_layer_norm_kernel                      |      75872   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     897152   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276864   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257152   0.70   0.15
+vectorized_elementwise_kernel                     |      42336   0.00   0.68
+vectorized_layer_norm_kernel                      |      75552   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272288   0.63   0.14
+vectorized_elementwise_kernel                     |     213376   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967040   0.83   0.12
+vectorized_elementwise_kernel                     |      42432   0.00   0.68
+vectorized_layer_norm_kernel                      |      75296   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     897728   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276736   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255168   0.71   0.15
+vectorized_elementwise_kernel                     |      42368   0.00   0.68
+vectorized_layer_norm_kernel                      |      75168   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272192   0.63   0.14
+vectorized_elementwise_kernel                     |     212896   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965792   0.83   0.12
+vectorized_elementwise_kernel                     |      42368   0.00   0.69
+vectorized_layer_norm_kernel                      |      74880   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898048   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276960   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256576   0.70   0.15
+vectorized_elementwise_kernel                     |      42496   0.00   0.68
+vectorized_layer_norm_kernel                      |      75072   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1275008   0.63   0.14
+vectorized_elementwise_kernel                     |     213184   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965472   0.83   0.12
+vectorized_elementwise_kernel                     |      41856   0.00   0.69
+vectorized_layer_norm_kernel                      |      75264   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     897056   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276832   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     254784   0.71   0.15
+vectorized_elementwise_kernel                     |      43072   0.00   0.67
+vectorized_layer_norm_kernel                      |      75232   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1276160   0.63   0.14
+vectorized_elementwise_kernel                     |     212928   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     964896   0.83   0.12
+vectorized_elementwise_kernel                     |      41984   0.00   0.69
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     897504   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278304   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255168   0.71   0.15
+vectorized_elementwise_kernel                     |      41600   0.00   0.69
+vectorized_layer_norm_kernel                      |      74944   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1273408   0.63   0.14
+vectorized_elementwise_kernel                     |     213024   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966208   0.83   0.12
+vectorized_elementwise_kernel                     |      41984   0.00   0.69
+vectorized_layer_norm_kernel                      |      74816   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     898656   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     279328   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255232   0.71   0.15
+vectorized_elementwise_kernel                     |      42336   0.00   0.68
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272768   0.63   0.14
+vectorized_elementwise_kernel                     |     212928   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     964704   0.83   0.12
+vectorized_elementwise_kernel                     |      41952   0.00   0.69
+vectorized_layer_norm_kernel                      |      74976   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     899648   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277856   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     254464   0.71   0.15
+vectorized_elementwise_kernel                     |      42080   0.00   0.69
+vectorized_layer_norm_kernel                      |      75168   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1271840   0.63   0.14
+vectorized_elementwise_kernel                     |     213088   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965056   0.83   0.12
+vectorized_elementwise_kernel                     |      42496   0.00   0.68
+vectorized_layer_norm_kernel                      |      75232   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     897760   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278624   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     254848   0.71   0.15
+vectorized_elementwise_kernel                     |      42816   0.00   0.68
+vectorized_layer_norm_kernel                      |      75104   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1276448   0.63   0.14
+vectorized_elementwise_kernel                     |     213088   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967040   0.83   0.12
+vectorized_elementwise_kernel                     |      42496   0.00   0.68
+vectorized_layer_norm_kernel                      |      75040   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     893568   0.63   0.13
+pytorch_flash::flash_fwd_kernel                   |     279392   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257568   0.70   0.15
+vectorized_elementwise_kernel                     |      41984   0.00   0.69
+vectorized_layer_norm_kernel                      |      74944   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272128   0.63   0.14
+vectorized_elementwise_kernel                     |     212608   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966336   0.83   0.12
+vectorized_elementwise_kernel                     |      42496   0.00   0.68
+vectorized_layer_norm_kernel                      |      75200   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896416   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278048   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255584   0.71   0.15
+vectorized_elementwise_kernel                     |      42784   0.00   0.68
+vectorized_layer_norm_kernel                      |      75200   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1271712   0.63   0.14
+vectorized_elementwise_kernel                     |     212832   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965344   0.83   0.12
+vectorized_elementwise_kernel                     |      42016   0.00   0.69
+vectorized_layer_norm_kernel                      |      75200   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     893824   0.63   0.13
+pytorch_flash::flash_fwd_kernel                   |     279072   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255648   0.71   0.15
+vectorized_elementwise_kernel                     |      42656   0.00   0.68
+vectorized_layer_norm_kernel                      |      75616   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1270304   0.63   0.14
+vectorized_elementwise_kernel                     |     212960   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966784   0.83   0.12
+vectorized_elementwise_kernel                     |      42112   0.00   0.69
+vectorized_layer_norm_kernel                      |      75200   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     894432   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277440   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     257120   0.70   0.15
+vectorized_elementwise_kernel                     |      42080   0.00   0.69
+vectorized_layer_norm_kernel                      |      74976   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1271680   0.63   0.14
+vectorized_elementwise_kernel                     |     212736   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965120   0.83   0.12
+vectorized_elementwise_kernel                     |      42336   0.00   0.68
+vectorized_layer_norm_kernel                      |      75168   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     895808   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276608   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256384   0.71   0.15
+vectorized_elementwise_kernel                     |      42368   0.00   0.69
+vectorized_layer_norm_kernel                      |      75232   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1269856   0.63   0.14
+vectorized_elementwise_kernel                     |     212736   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966208   0.83   0.12
+vectorized_elementwise_kernel                     |      42432   0.00   0.68
+vectorized_layer_norm_kernel                      |      74880   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896032   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     277536   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256096   0.71   0.15
+vectorized_elementwise_kernel                     |      42944   0.00   0.67
+vectorized_layer_norm_kernel                      |      75264   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1269952   0.63   0.14
+vectorized_elementwise_kernel                     |     212768   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967264   0.83   0.12
+vectorized_elementwise_kernel                     |      42240   0.00   0.69
+vectorized_layer_norm_kernel                      |      75296   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     895392   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278848   0.47   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256672   0.70   0.15
+vectorized_elementwise_kernel                     |      42656   0.00   0.68
+vectorized_layer_norm_kernel                      |      74944   0.02   0.21
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1271456   0.63   0.14
+vectorized_elementwise_kernel                     |     212896   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966304   0.83   0.12
+vectorized_elementwise_kernel                     |      42336   0.00   0.68
+vectorized_layer_norm_kernel                      |      74784   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     894208   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     276768   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255360   0.71   0.15
+vectorized_elementwise_kernel                     |      43264   0.00   0.67
+vectorized_layer_norm_kernel                      |      75040   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1271968   0.63   0.14
+vectorized_elementwise_kernel                     |     212608   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     965536   0.83   0.12
+vectorized_elementwise_kernel                     |      41920   0.00   0.69
+vectorized_layer_norm_kernel                      |      75136   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     894688   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278048   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     254944   0.71   0.15
+vectorized_elementwise_kernel                     |      41856   0.00   0.69
+vectorized_layer_norm_kernel                      |      75424   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1269760   0.63   0.14
+vectorized_elementwise_kernel                     |     212800   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     966816   0.83   0.12
+vectorized_elementwise_kernel                     |      41952   0.00   0.69
+vectorized_layer_norm_kernel                      |      75232   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     896832   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278048   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255680   0.71   0.15
+vectorized_elementwise_kernel                     |      42304   0.00   0.68
+vectorized_layer_norm_kernel                      |      75200   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1270784   0.63   0.14
+vectorized_elementwise_kernel                     |     213024   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     968480   0.83   0.12
+vectorized_elementwise_kernel                     |      42432   0.00   0.68
+vectorized_layer_norm_kernel                      |      74912   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     895104   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278496   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     256640   0.70   0.15
+vectorized_elementwise_kernel                     |      41984   0.00   0.69
+vectorized_layer_norm_kernel                      |      75168   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272928   0.63   0.14
+vectorized_elementwise_kernel                     |     212800   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967296   0.83   0.12
+vectorized_elementwise_kernel                     |      42432   0.00   0.69
+vectorized_layer_norm_kernel                      |      75296   0.02   0.20
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     894880   0.62   0.13
+pytorch_flash::flash_fwd_kernel                   |     278432   0.48   0.15
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f...|     255936   0.71   0.15
+vectorized_elementwise_kernel                     |      42976   0.00   0.67
+vectorized_layer_norm_kernel                      |      75360   0.02   0.20
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|    1272640   0.63   0.14
+vectorized_elementwise_kernel                     |     212960   0.02   0.43
+ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f...|     967264   0.83   0.12
+vectorized_elementwise_kernel                     |      42208   0.00   0.68
+vectorized_layer_norm_kernel                      |      75360   0.02   0.20
+elementwise_kernel                                |       7104   0.00   0.00
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize3...|      13408   0.04   0.11

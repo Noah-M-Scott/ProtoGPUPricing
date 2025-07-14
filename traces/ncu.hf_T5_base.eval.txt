@@ -1,0 +1,1570 @@
+Kernel                                                 Latency Tensor   DRAM
+indexSelectLargeIndex                             |      37184   0.01   0.04
+vectorized_elementwise_kernel                     |       3840   0.00   0.00
+unrolled_elementwise_kernel                       |       9312   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+unrolled_elementwise_kernel                       |      17120   0.00   0.09
+vectorized_elementwise_kernel                     |      11584   0.00   0.27
+reduce_kernel                                     |      14304   0.00   0.22
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23072   0.00   0.07
+unrolled_elementwise_kernel                       |      16864   0.00   0.18
+elementwise_kernel                                |      15840   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      37120   0.36   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33536   0.40   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33376   0.40   0.06
+Kernel                                            |     305632   0.12   0.14
+elementwise_kernel_with_index                     |       3872   0.00   0.00
+elementwise_kernel_with_index                     |       3712   0.00   0.00
+elementwise_kernel                                |      30432   0.02   0.22
+vectorized_elementwise_kernel                     |      28608   0.00   0.59
+unrolled_elementwise_kernel                       |      42560   0.00   0.20
+vectorized_elementwise_kernel                     |      55712   0.00   0.44
+vectorized_elementwise_kernel                     |      53888   0.00   0.46
+vectorized_elementwise_kernel                     |      56448   0.00   0.43
+vectorized_elementwise_kernel                     |      27616   0.00   0.61
+unrolled_elementwise_kernel                       |      40000   0.00   0.49
+vectorized_elementwise_kernel                     |      22272   0.00   0.41
+vectorized_elementwise_kernel                     |      23584   0.01   0.39
+vectorized_elementwise_kernel                     |      22624   0.00   0.40
+vectorized_elementwise_kernel                     |      22848   0.00   0.40
+unrolled_elementwise_kernel                       |      44640   0.00   0.34
+vectorized_elementwise_kernel                     |      56032   0.00   0.44
+vectorized_elementwise_kernel                     |      59456   0.00   0.11
+vectorized_elementwise_kernel                     |      72704   0.00   0.59
+vectorized_elementwise_kernel                     |      78400   0.00   0.58
+vectorized_elementwise_kernel                     |      72960   0.00   0.57
+indexSelectLargeIndex                             |     862720   0.01   0.07
+elementwise_kernel                                |     340000   0.05   0.27
+elementwise_kernel                                |     965856   0.01   0.71
+unrolled_elementwise_kernel                       |     363872   0.00   0.38
+cunn_SoftMaxForward                               |     385344   0.01   0.49
+unrolled_elementwise_kernel                       |     353024   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96320   0.37   0.53
+elementwise_kernel                                |      16160   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      37184   0.36   0.06
+vectorized_elementwise_kernel                     |      10176   0.00   0.30
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+reduce_kernel                                     |      16800   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4000   0.00   0.00
+elementwise_kernel                                |      29120   0.00   0.05
+unrolled_elementwise_kernel                       |      17056   0.00   0.09
+vectorized_elementwise_kernel                     |      11520   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4224   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23072   0.00   0.07
+unrolled_elementwise_kernel                       |      17024   0.00   0.18
+elementwise_kernel                                |      16224   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81184   0.67   0.05
+vectorized_elementwise_kernel                     |      20320   0.00   0.31
+Kernel                                            |      87072   0.61   0.10
+vectorized_elementwise_kernel                     |      10240   0.00   0.30
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16672   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3776   0.00   0.00
+vectorized_elementwise_kernel                     |       4672   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      28000   0.00   0.06
+unrolled_elementwise_kernel                       |      17056   0.00   0.09
+vectorized_elementwise_kernel                     |      11712   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      23264   0.00   0.07
+unrolled_elementwise_kernel                       |      17440   0.00   0.18
+elementwise_kernel                                |      15584   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      37184   0.36   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33760   0.40   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33024   0.41   0.06
+Kernel                                            |     305664   0.12   0.14
+elementwise_kernel                                |     947936   0.01   0.73
+unrolled_elementwise_kernel                       |     363456   0.00   0.38
+cunn_SoftMaxForward                               |     385024   0.01   0.49
+unrolled_elementwise_kernel                       |     352896   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      95136   0.37   0.54
+elementwise_kernel                                |      16512   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36928   0.36   0.06
+vectorized_elementwise_kernel                     |      10112   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16576   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      28032   0.00   0.06
+unrolled_elementwise_kernel                       |      17184   0.00   0.09
+vectorized_elementwise_kernel                     |      11648   0.00   0.27
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+elementwise_kernel                                |      23264   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80704   0.68   0.05
+vectorized_elementwise_kernel                     |      20256   0.00   0.31
+Kernel                                            |      87552   0.61   0.10
+vectorized_elementwise_kernel                     |      10144   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16672   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3840   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4672   0.00   0.00
+elementwise_kernel                                |      28384   0.00   0.06
+unrolled_elementwise_kernel                       |      17184   0.00   0.09
+vectorized_elementwise_kernel                     |      11776   0.00   0.26
+reduce_kernel                                     |      14112   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      23168   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15936   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36160   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33280   0.40   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33472   0.40   0.06
+Kernel                                            |     305856   0.12   0.14
+elementwise_kernel                                |     954752   0.01   0.72
+unrolled_elementwise_kernel                       |     363936   0.00   0.38
+cunn_SoftMaxForward                               |     386496   0.01   0.49
+unrolled_elementwise_kernel                       |     353088   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      98112   0.36   0.52
+elementwise_kernel                                |      16288   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36224   0.37   0.06
+vectorized_elementwise_kernel                     |      10240   0.00   0.30
+vectorized_elementwise_kernel                     |       8672   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16544   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+elementwise_kernel                                |      28000   0.00   0.06
+unrolled_elementwise_kernel                       |      17472   0.00   0.09
+vectorized_elementwise_kernel                     |      11808   0.00   0.26
+reduce_kernel                                     |      14400   0.00   0.22
+vectorized_elementwise_kernel                     |       4192   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23200   0.00   0.07
+unrolled_elementwise_kernel                       |      17088   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81952   0.67   0.05
+vectorized_elementwise_kernel                     |      20256   0.00   0.31
+Kernel                                            |      87456   0.61   0.10
+vectorized_elementwise_kernel                     |      10176   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16480   0.00   0.05
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       3840   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      27840   0.00   0.06
+unrolled_elementwise_kernel                       |      17184   0.00   0.09
+vectorized_elementwise_kernel                     |      11680   0.00   0.27
+reduce_kernel                                     |      14144   0.00   0.22
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23360   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36960   0.36   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33280   0.40   0.06
+Kernel                                            |     305888   0.12   0.14
+elementwise_kernel                                |     984384   0.01   0.70
+unrolled_elementwise_kernel                       |     364416   0.00   0.38
+cunn_SoftMaxForward                               |     385504   0.01   0.49
+unrolled_elementwise_kernel                       |     352544   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96192   0.37   0.53
+elementwise_kernel                                |      16192   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36192   0.37   0.06
+vectorized_elementwise_kernel                     |      10144   0.00   0.31
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16736   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28096   0.00   0.06
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11584   0.00   0.27
+reduce_kernel                                     |      14432   0.00   0.22
+vectorized_elementwise_kernel                     |       4192   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+elementwise_kernel                                |      23104   0.00   0.07
+unrolled_elementwise_kernel                       |      17248   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81312   0.67   0.05
+vectorized_elementwise_kernel                     |      20256   0.00   0.31
+Kernel                                            |      87680   0.60   0.10
+vectorized_elementwise_kernel                     |       9920   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16864   0.00   0.05
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+elementwise_kernel                                |      28512   0.00   0.06
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11552   0.00   0.27
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+elementwise_kernel                                |      22912   0.00   0.07
+unrolled_elementwise_kernel                       |      17344   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32992   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33152   0.41   0.06
+Kernel                                            |     305696   0.12   0.14
+elementwise_kernel                                |     967200   0.01   0.71
+unrolled_elementwise_kernel                       |     363648   0.00   0.38
+cunn_SoftMaxForward                               |     385056   0.01   0.49
+unrolled_elementwise_kernel                       |     353440   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97312   0.36   0.52
+elementwise_kernel                                |      16640   0.02   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      37056   0.36   0.06
+vectorized_elementwise_kernel                     |      10080   0.00   0.31
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16544   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      28288   0.00   0.06
+unrolled_elementwise_kernel                       |      17472   0.00   0.09
+vectorized_elementwise_kernel                     |      11520   0.00   0.27
+reduce_kernel                                     |      14528   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23296   0.00   0.07
+unrolled_elementwise_kernel                       |      17024   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81792   0.67   0.05
+vectorized_elementwise_kernel                     |      20160   0.00   0.31
+Kernel                                            |      87392   0.61   0.10
+vectorized_elementwise_kernel                     |       9920   0.00   0.31
+vectorized_elementwise_kernel                     |       8416   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16288   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4096   0.00   0.00
+elementwise_kernel                                |      28064   0.00   0.06
+unrolled_elementwise_kernel                       |      17120   0.00   0.09
+vectorized_elementwise_kernel                     |      11744   0.00   0.26
+reduce_kernel                                     |      14400   0.00   0.22
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      23712   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      16032   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36288   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33056   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32928   0.41   0.06
+Kernel                                            |     305824   0.12   0.14
+elementwise_kernel                                |     951552   0.01   0.73
+unrolled_elementwise_kernel                       |     364032   0.00   0.38
+cunn_SoftMaxForward                               |     385920   0.01   0.49
+unrolled_elementwise_kernel                       |     353216   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96384   0.37   0.53
+elementwise_kernel                                |      16224   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+vectorized_elementwise_kernel                     |      10112   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16288   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      28960   0.00   0.05
+unrolled_elementwise_kernel                       |      17120   0.00   0.09
+vectorized_elementwise_kernel                     |      11488   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23008   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81056   0.67   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      87104   0.61   0.10
+vectorized_elementwise_kernel                     |      10048   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16896   0.00   0.05
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4096   0.00   0.00
+elementwise_kernel                                |      28064   0.00   0.06
+unrolled_elementwise_kernel                       |      17184   0.00   0.09
+vectorized_elementwise_kernel                     |      11648   0.00   0.27
+reduce_kernel                                     |      14304   0.00   0.22
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+elementwise_kernel                                |      23072   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36320   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33280   0.40   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33376   0.40   0.06
+Kernel                                            |     305760   0.12   0.14
+elementwise_kernel                                |     985888   0.01   0.70
+unrolled_elementwise_kernel                       |     364160   0.00   0.38
+cunn_SoftMaxForward                               |     386560   0.01   0.49
+unrolled_elementwise_kernel                       |     353440   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96160   0.37   0.53
+elementwise_kernel                                |      16352   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36192   0.37   0.06
+vectorized_elementwise_kernel                     |      10080   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16384   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      29408   0.00   0.05
+unrolled_elementwise_kernel                       |      17248   0.00   0.09
+vectorized_elementwise_kernel                     |      11744   0.00   0.26
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+elementwise_kernel                                |      22624   0.00   0.07
+unrolled_elementwise_kernel                       |      16992   0.00   0.18
+elementwise_kernel                                |      15808   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80576   0.68   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      87616   0.60   0.10
+vectorized_elementwise_kernel                     |      10176   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16576   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4096   0.00   0.00
+elementwise_kernel                                |      28064   0.00   0.06
+unrolled_elementwise_kernel                       |      17376   0.00   0.09
+vectorized_elementwise_kernel                     |      11488   0.00   0.27
+reduce_kernel                                     |      14464   0.00   0.22
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23264   0.00   0.07
+unrolled_elementwise_kernel                       |      17184   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      37056   0.36   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33024   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32896   0.41   0.06
+Kernel                                            |     305984   0.12   0.14
+elementwise_kernel                                |     943968   0.01   0.73
+unrolled_elementwise_kernel                       |     364736   0.00   0.38
+cunn_SoftMaxForward                               |     385632   0.01   0.49
+unrolled_elementwise_kernel                       |     353504   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96992   0.36   0.53
+elementwise_kernel                                |      16320   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36352   0.37   0.06
+vectorized_elementwise_kernel                     |      10016   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8736   0.00   0.18
+reduce_kernel                                     |      16576   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3488   0.00   0.00
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      28384   0.00   0.06
+unrolled_elementwise_kernel                       |      17696   0.00   0.09
+vectorized_elementwise_kernel                     |      11584   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+elementwise_kernel                                |      23008   0.00   0.07
+unrolled_elementwise_kernel                       |      17120   0.00   0.18
+elementwise_kernel                                |      16096   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81504   0.67   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      88160   0.60   0.10
+vectorized_elementwise_kernel                     |      10304   0.00   0.30
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+elementwise_kernel                                |      28192   0.00   0.06
+unrolled_elementwise_kernel                       |      17536   0.00   0.09
+vectorized_elementwise_kernel                     |      11648   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      23104   0.00   0.07
+unrolled_elementwise_kernel                       |      17312   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36896   0.36   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32992   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33248   0.40   0.06
+Kernel                                            |     305760   0.12   0.14
+elementwise_kernel                                |     969696   0.01   0.71
+unrolled_elementwise_kernel                       |     364704   0.00   0.38
+cunn_SoftMaxForward                               |     384544   0.01   0.49
+unrolled_elementwise_kernel                       |     353280   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96448   0.37   0.53
+elementwise_kernel                                |      16736   0.02   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36224   0.37   0.06
+vectorized_elementwise_kernel                     |      10272   0.00   0.30
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16800   0.00   0.05
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+elementwise_kernel                                |      27712   0.00   0.06
+unrolled_elementwise_kernel                       |      17440   0.00   0.09
+vectorized_elementwise_kernel                     |      11584   0.00   0.27
+reduce_kernel                                     |      14464   0.00   0.22
+vectorized_elementwise_kernel                     |       4672   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+elementwise_kernel                                |      23232   0.00   0.07
+unrolled_elementwise_kernel                       |      17312   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      82336   0.66   0.05
+vectorized_elementwise_kernel                     |      20416   0.00   0.31
+Kernel                                            |      87776   0.60   0.10
+vectorized_elementwise_kernel                     |      10336   0.00   0.30
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16640   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+elementwise_kernel                                |      28192   0.00   0.06
+unrolled_elementwise_kernel                       |      17536   0.00   0.09
+vectorized_elementwise_kernel                     |      11776   0.00   0.26
+reduce_kernel                                     |      14048   0.00   0.22
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22976   0.00   0.07
+unrolled_elementwise_kernel                       |      17440   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36384   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32928   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32992   0.41   0.06
+Kernel                                            |     306048   0.12   0.14
+elementwise_kernel                                |     963936   0.01   0.72
+unrolled_elementwise_kernel                       |     365344   0.00   0.38
+cunn_SoftMaxForward                               |     385792   0.01   0.49
+unrolled_elementwise_kernel                       |     353472   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      99040   0.36   0.52
+elementwise_kernel                                |      16384   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36192   0.37   0.06
+vectorized_elementwise_kernel                     |      10208   0.00   0.30
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16640   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      28832   0.00   0.05
+unrolled_elementwise_kernel                       |      17408   0.00   0.09
+vectorized_elementwise_kernel                     |      11712   0.00   0.27
+reduce_kernel                                     |      14208   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23264   0.00   0.07
+unrolled_elementwise_kernel                       |      17248   0.00   0.18
+elementwise_kernel                                |      16320   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      82016   0.67   0.05
+vectorized_elementwise_kernel                     |      20192   0.00   0.31
+Kernel                                            |      87520   0.61   0.10
+vectorized_elementwise_kernel                     |      10432   0.00   0.30
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+reduce_kernel                                     |      16928   0.00   0.05
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      28000   0.00   0.06
+unrolled_elementwise_kernel                       |      17376   0.00   0.09
+vectorized_elementwise_kernel                     |      11360   0.00   0.27
+reduce_kernel                                     |      14432   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22880   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32832   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33120   0.41   0.06
+Kernel                                            |     305888   0.12   0.14
+elementwise_kernel                                |    1006048   0.01   0.69
+unrolled_elementwise_kernel                       |     364512   0.00   0.38
+cunn_SoftMaxForward                               |     385344   0.01   0.49
+unrolled_elementwise_kernel                       |     353536   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      95200   0.37   0.54
+elementwise_kernel                                |      16480   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36480   0.37   0.06
+vectorized_elementwise_kernel                     |      10176   0.00   0.30
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16736   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28288   0.00   0.06
+unrolled_elementwise_kernel                       |      17792   0.00   0.09
+vectorized_elementwise_kernel                     |      11808   0.00   0.26
+reduce_kernel                                     |      14496   0.00   0.22
+vectorized_elementwise_kernel                     |       4224   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23104   0.00   0.07
+unrolled_elementwise_kernel                       |      17376   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81696   0.67   0.05
+vectorized_elementwise_kernel                     |      20352   0.00   0.31
+Kernel                                            |      87552   0.61   0.10
+vectorized_elementwise_kernel                     |      10240   0.00   0.30
+vectorized_elementwise_kernel                     |       8416   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      28576   0.00   0.06
+unrolled_elementwise_kernel                       |      17344   0.00   0.09
+vectorized_elementwise_kernel                     |      11424   0.00   0.27
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23712   0.00   0.07
+unrolled_elementwise_kernel                       |      17504   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36480   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32992   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33024   0.41   0.06
+Kernel                                            |     305792   0.12   0.14
+elementwise_kernel                                |     992800   0.01   0.69
+unrolled_elementwise_kernel                       |     364672   0.00   0.38
+cunn_SoftMaxForward                               |     385120   0.01   0.49
+unrolled_elementwise_kernel                       |     353408   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97952   0.36   0.52
+elementwise_kernel                                |      16864   0.02   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36224   0.37   0.06
+vectorized_elementwise_kernel                     |      10240   0.00   0.30
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16704   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      28000   0.00   0.06
+unrolled_elementwise_kernel                       |      17024   0.00   0.09
+vectorized_elementwise_kernel                     |      12128   0.00   0.26
+reduce_kernel                                     |      14080   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23200   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      15840   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81792   0.67   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      87328   0.61   0.10
+vectorized_elementwise_kernel                     |      10048   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16768   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4704   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      29184   0.00   0.05
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11808   0.00   0.26
+reduce_kernel                                     |      13920   0.01   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      23712   0.00   0.07
+unrolled_elementwise_kernel                       |      17728   0.00   0.18
+elementwise_kernel                                |      15840   0.02   0.10
+indexSelectLargeIndex                             |      35552   0.01   0.04
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+elementwise_kernel_with_index                     |       3872   0.00   0.00
+elementwise_kernel                                |      32416   0.03   0.20
+elementwise_kernel                                |      36352   0.04   0.47
+unrolled_elementwise_kernel                       |      35008   0.00   0.06
+elementwise_kernel                                |      32192   0.02   0.29
+unrolled_elementwise_kernel                       |      32736   0.00   0.25
+vectorized_elementwise_kernel                     |      14720   0.00   0.28
+vectorized_elementwise_kernel                     |      14752   0.00   0.28
+vectorized_elementwise_kernel                     |       3808   0.00   0.00
+unrolled_elementwise_kernel                       |       7712   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+unrolled_elementwise_kernel                       |      17152   0.00   0.09
+vectorized_elementwise_kernel                     |      11616   0.00   0.27
+reduce_kernel                                     |      14304   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23200   0.00   0.07
+unrolled_elementwise_kernel                       |      17344   0.00   0.18
+elementwise_kernel                                |      15968   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36544   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32896   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33088   0.41   0.06
+Kernel                                            |     305888   0.12   0.14
+elementwise_kernel_with_index                     |       3808   0.00   0.00
+elementwise_kernel_with_index                     |       3712   0.00   0.00
+elementwise_kernel                                |      33344   0.02   0.20
+vectorized_elementwise_kernel                     |      58720   0.00   0.11
+vectorized_elementwise_kernel                     |      71872   0.00   0.60
+vectorized_elementwise_kernel                     |      53984   0.00   0.45
+vectorized_elementwise_kernel                     |      29216   0.00   0.57
+unrolled_elementwise_kernel                       |      41152   0.00   0.47
+vectorized_elementwise_kernel                     |      22784   0.00   0.40
+vectorized_elementwise_kernel                     |      23456   0.01   0.39
+vectorized_elementwise_kernel                     |      22784   0.00   0.40
+vectorized_elementwise_kernel                     |      22496   0.00   0.40
+unrolled_elementwise_kernel                       |      44160   0.00   0.34
+vectorized_elementwise_kernel                     |      54528   0.00   0.45
+vectorized_elementwise_kernel                     |      58976   0.00   0.11
+vectorized_elementwise_kernel                     |      73536   0.00   0.59
+vectorized_elementwise_kernel                     |      77632   0.00   0.58
+vectorized_elementwise_kernel                     |      53984   0.00   0.45
+indexSelectLargeIndex                             |     861088   0.01   0.07
+elementwise_kernel                                |     311648   0.03   0.31
+elementwise_kernel                                |     960928   0.01   0.72
+unrolled_elementwise_kernel                       |     363296   0.00   0.38
+cunn_SoftMaxForward                               |     446080   0.02   0.42
+unrolled_elementwise_kernel                       |     353184   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      95936   0.37   0.53
+elementwise_kernel                                |      16512   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36576   0.37   0.06
+vectorized_elementwise_kernel                     |      10176   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16672   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3488   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+elementwise_kernel                                |      28352   0.00   0.06
+unrolled_elementwise_kernel                       |      17088   0.00   0.09
+vectorized_elementwise_kernel                     |      11648   0.00   0.27
+reduce_kernel                                     |      14624   0.00   0.21
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+elementwise_kernel                                |      23040   0.00   0.07
+unrolled_elementwise_kernel                       |      17184   0.00   0.18
+elementwise_kernel                                |      15872   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36448   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33280   0.40   0.06
+Kernel                                            |     305536   0.12   0.14
+vectorized_elementwise_kernel                     |     124384   0.00   0.32
+elementwise_kernel                                |     310016   0.03   0.30
+vectorized_elementwise_kernel                     |     166496   0.00   0.85
+unrolled_elementwise_kernel                       |     364064   0.00   0.38
+cunn_SoftMaxForward                               |     385760   0.01   0.49
+unrolled_elementwise_kernel                       |     353856   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97024   0.36   0.53
+elementwise_kernel                                |      16384   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36480   0.37   0.06
+vectorized_elementwise_kernel                     |      10464   0.00   0.30
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16384   0.00   0.05
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       3488   0.00   0.00
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4000   0.00   0.00
+elementwise_kernel                                |      28768   0.00   0.06
+unrolled_elementwise_kernel                       |      17152   0.00   0.09
+vectorized_elementwise_kernel                     |      11584   0.00   0.27
+reduce_kernel                                     |      14432   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23488   0.00   0.07
+unrolled_elementwise_kernel                       |      17408   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80896   0.67   0.05
+vectorized_elementwise_kernel                     |      20192   0.00   0.31
+Kernel                                            |      87680   0.60   0.10
+vectorized_elementwise_kernel                     |      10112   0.00   0.31
+vectorized_elementwise_kernel                     |       8416   0.00   0.18
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3968   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28128   0.00   0.06
+unrolled_elementwise_kernel                       |      17152   0.00   0.09
+vectorized_elementwise_kernel                     |      11680   0.00   0.27
+reduce_kernel                                     |      14464   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      22848   0.00   0.07
+unrolled_elementwise_kernel                       |      17312   0.00   0.18
+elementwise_kernel                                |      15648   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33184   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32992   0.41   0.06
+Kernel                                            |     305888   0.12   0.14
+elementwise_kernel                                |     969184   0.01   0.71
+unrolled_elementwise_kernel                       |     364192   0.00   0.38
+cunn_SoftMaxForward                               |     444896   0.02   0.43
+unrolled_elementwise_kernel                       |     353056   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97856   0.36   0.52
+elementwise_kernel                                |      16736   0.02   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36384   0.37   0.06
+vectorized_elementwise_kernel                     |      10080   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16832   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4736   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28224   0.00   0.06
+unrolled_elementwise_kernel                       |      17376   0.00   0.09
+vectorized_elementwise_kernel                     |      11584   0.00   0.27
+reduce_kernel                                     |      14432   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23200   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      16224   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36320   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32960   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33184   0.41   0.06
+Kernel                                            |     305600   0.12   0.14
+vectorized_elementwise_kernel                     |     166816   0.00   0.85
+unrolled_elementwise_kernel                       |     364192   0.00   0.38
+cunn_SoftMaxForward                               |     385408   0.01   0.49
+unrolled_elementwise_kernel                       |     353344   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97184   0.36   0.53
+elementwise_kernel                                |      16416   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36320   0.37   0.06
+vectorized_elementwise_kernel                     |      10208   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16512   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4192   0.00   0.00
+elementwise_kernel                                |      28896   0.00   0.05
+unrolled_elementwise_kernel                       |      17088   0.00   0.09
+vectorized_elementwise_kernel                     |      11296   0.00   0.27
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      22496   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81664   0.67   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      87872   0.60   0.10
+vectorized_elementwise_kernel                     |      10400   0.00   0.30
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16864   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      28768   0.00   0.06
+unrolled_elementwise_kernel                       |      17280   0.00   0.09
+vectorized_elementwise_kernel                     |      11808   0.00   0.26
+reduce_kernel                                     |      14400   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4736   0.00   0.00
+elementwise_kernel                                |      23040   0.00   0.07
+unrolled_elementwise_kernel                       |      17344   0.00   0.18
+elementwise_kernel                                |      16192   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32896   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32928   0.41   0.06
+Kernel                                            |     305856   0.12   0.14
+elementwise_kernel                                |     968416   0.01   0.71
+unrolled_elementwise_kernel                       |     364800   0.00   0.38
+cunn_SoftMaxForward                               |     445824   0.02   0.42
+unrolled_elementwise_kernel                       |     353856   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96352   0.37   0.53
+elementwise_kernel                                |      16512   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+vectorized_elementwise_kernel                     |       9984   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+reduce_kernel                                     |      16416   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       5696   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4096   0.00   0.00
+elementwise_kernel                                |      28512   0.00   0.06
+unrolled_elementwise_kernel                       |      17792   0.00   0.09
+vectorized_elementwise_kernel                     |      11808   0.00   0.26
+reduce_kernel                                     |      14208   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22784   0.00   0.07
+unrolled_elementwise_kernel                       |      17056   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36192   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33216   0.40   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+Kernel                                            |     305824   0.12   0.14
+vectorized_elementwise_kernel                     |     167136   0.00   0.84
+unrolled_elementwise_kernel                       |     364448   0.00   0.38
+cunn_SoftMaxForward                               |     384992   0.01   0.49
+unrolled_elementwise_kernel                       |     353216   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97792   0.36   0.52
+elementwise_kernel                                |      16448   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36320   0.37   0.06
+vectorized_elementwise_kernel                     |      10240   0.00   0.30
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16416   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4000   0.00   0.00
+elementwise_kernel                                |      28768   0.00   0.06
+unrolled_elementwise_kernel                       |      17536   0.00   0.09
+vectorized_elementwise_kernel                     |      11424   0.00   0.27
+reduce_kernel                                     |      14400   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22816   0.00   0.07
+unrolled_elementwise_kernel                       |      17312   0.00   0.18
+elementwise_kernel                                |      15872   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81952   0.67   0.05
+vectorized_elementwise_kernel                     |      20192   0.00   0.31
+Kernel                                            |      87776   0.60   0.10
+vectorized_elementwise_kernel                     |      10240   0.00   0.30
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+elementwise_kernel                                |      28352   0.00   0.06
+unrolled_elementwise_kernel                       |      17536   0.00   0.09
+vectorized_elementwise_kernel                     |      11488   0.00   0.27
+reduce_kernel                                     |      14240   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23552   0.00   0.07
+unrolled_elementwise_kernel                       |      17376   0.00   0.18
+elementwise_kernel                                |      15936   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33056   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32832   0.41   0.06
+Kernel                                            |     305792   0.12   0.14
+elementwise_kernel                                |     976256   0.01   0.71
+unrolled_elementwise_kernel                       |     364416   0.00   0.38
+cunn_SoftMaxForward                               |     445536   0.02   0.43
+unrolled_elementwise_kernel                       |     353632   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96736   0.37   0.53
+elementwise_kernel                                |      16256   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+vectorized_elementwise_kernel                     |      10528   0.00   0.29
+vectorized_elementwise_kernel                     |       8672   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16576   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+elementwise_kernel                                |      28352   0.00   0.06
+unrolled_elementwise_kernel                       |      16992   0.00   0.09
+vectorized_elementwise_kernel                     |      11456   0.00   0.27
+reduce_kernel                                     |      14400   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23328   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15680   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36384   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33024   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33152   0.41   0.06
+Kernel                                            |     305632   0.12   0.14
+vectorized_elementwise_kernel                     |     168640   0.00   0.84
+unrolled_elementwise_kernel                       |     360032   0.00   0.39
+cunn_SoftMaxForward                               |     384512   0.01   0.49
+unrolled_elementwise_kernel                       |     353920   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      95200   0.37   0.54
+elementwise_kernel                                |      16544   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36064   0.37   0.06
+vectorized_elementwise_kernel                     |      10112   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+reduce_kernel                                     |      16704   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+elementwise_kernel                                |      28192   0.00   0.06
+unrolled_elementwise_kernel                       |      17184   0.00   0.09
+vectorized_elementwise_kernel                     |      11552   0.00   0.27
+reduce_kernel                                     |      14272   0.00   0.22
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22976   0.00   0.07
+unrolled_elementwise_kernel                       |      17088   0.00   0.18
+elementwise_kernel                                |      15808   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81536   0.67   0.05
+vectorized_elementwise_kernel                     |      20384   0.00   0.31
+Kernel                                            |      87456   0.61   0.10
+vectorized_elementwise_kernel                     |      10272   0.00   0.30
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16480   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+elementwise_kernel                                |      28960   0.00   0.05
+unrolled_elementwise_kernel                       |      17472   0.00   0.09
+vectorized_elementwise_kernel                     |      11424   0.00   0.27
+reduce_kernel                                     |      14592   0.00   0.21
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+elementwise_kernel                                |      23360   0.00   0.07
+unrolled_elementwise_kernel                       |      17376   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36096   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32896   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33056   0.41   0.06
+Kernel                                            |     305536   0.12   0.14
+elementwise_kernel                                |     980352   0.01   0.70
+unrolled_elementwise_kernel                       |     360064   0.00   0.39
+cunn_SoftMaxForward                               |     445472   0.02   0.42
+unrolled_elementwise_kernel                       |     352992   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97088   0.36   0.53
+elementwise_kernel                                |      16448   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36128   0.37   0.06
+vectorized_elementwise_kernel                     |      10208   0.00   0.30
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8704   0.00   0.18
+reduce_kernel                                     |      16928   0.00   0.05
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4864   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      28768   0.00   0.06
+unrolled_elementwise_kernel                       |      17536   0.00   0.09
+vectorized_elementwise_kernel                     |      11328   0.00   0.27
+reduce_kernel                                     |      14528   0.00   0.21
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22656   0.00   0.07
+unrolled_elementwise_kernel                       |      17472   0.00   0.18
+elementwise_kernel                                |      15808   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36352   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33184   0.41   0.06
+Kernel                                            |     305664   0.12   0.14
+vectorized_elementwise_kernel                     |     167072   0.00   0.84
+unrolled_elementwise_kernel                       |     360608   0.00   0.38
+cunn_SoftMaxForward                               |     385920   0.01   0.49
+unrolled_elementwise_kernel                       |     353280   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      99808   0.35   0.51
+elementwise_kernel                                |      16224   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+vectorized_elementwise_kernel                     |      10272   0.00   0.30
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3936   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28544   0.00   0.06
+unrolled_elementwise_kernel                       |      17728   0.00   0.09
+vectorized_elementwise_kernel                     |      11328   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+elementwise_kernel                                |      23328   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80608   0.68   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      88032   0.60   0.10
+vectorized_elementwise_kernel                     |      10048   0.00   0.31
+vectorized_elementwise_kernel                     |       8416   0.00   0.18
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+reduce_kernel                                     |      16736   0.00   0.05
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+elementwise_kernel                                |      28352   0.00   0.06
+unrolled_elementwise_kernel                       |      17280   0.00   0.09
+vectorized_elementwise_kernel                     |      11552   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+elementwise_kernel                                |      22944   0.00   0.07
+unrolled_elementwise_kernel                       |      17472   0.00   0.18
+elementwise_kernel                                |      15648   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36512   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32832   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32832   0.41   0.06
+Kernel                                            |     305792   0.12   0.14
+elementwise_kernel                                |     960992   0.01   0.72
+unrolled_elementwise_kernel                       |     360320   0.00   0.39
+cunn_SoftMaxForward                               |     446048   0.02   0.42
+unrolled_elementwise_kernel                       |     352608   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      95712   0.37   0.53
+elementwise_kernel                                |      16416   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36224   0.37   0.06
+vectorized_elementwise_kernel                     |      10176   0.00   0.31
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16672   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4736   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+elementwise_kernel                                |      28672   0.00   0.06
+unrolled_elementwise_kernel                       |      17152   0.00   0.09
+vectorized_elementwise_kernel                     |      11776   0.00   0.26
+reduce_kernel                                     |      14272   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      23168   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      16064   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36448   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33152   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33088   0.41   0.06
+Kernel                                            |     305504   0.12   0.14
+vectorized_elementwise_kernel                     |     167136   0.00   0.84
+unrolled_elementwise_kernel                       |     360672   0.00   0.38
+cunn_SoftMaxForward                               |     384704   0.01   0.49
+unrolled_elementwise_kernel                       |     352992   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      93632   0.38   0.54
+elementwise_kernel                                |      16224   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+vectorized_elementwise_kernel                     |      10080   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+reduce_kernel                                     |      16672   0.00   0.05
+vectorized_elementwise_kernel                     |       3616   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      27936   0.00   0.06
+unrolled_elementwise_kernel                       |      17248   0.00   0.09
+vectorized_elementwise_kernel                     |      11328   0.00   0.27
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+elementwise_kernel                                |      23296   0.00   0.07
+unrolled_elementwise_kernel                       |      16992   0.00   0.18
+elementwise_kernel                                |      15808   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80736   0.68   0.05
+vectorized_elementwise_kernel                     |      20160   0.00   0.31
+Kernel                                            |      87136   0.61   0.10
+vectorized_elementwise_kernel                     |      10432   0.00   0.30
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16736   0.00   0.05
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28864   0.00   0.05
+unrolled_elementwise_kernel                       |      17120   0.00   0.09
+vectorized_elementwise_kernel                     |      11744   0.00   0.26
+reduce_kernel                                     |      14304   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+elementwise_kernel                                |      22944   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      16224   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36512   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32896   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32960   0.41   0.06
+Kernel                                            |     305696   0.12   0.14
+elementwise_kernel                                |     952512   0.01   0.72
+unrolled_elementwise_kernel                       |     360416   0.00   0.39
+cunn_SoftMaxForward                               |     445120   0.02   0.43
+unrolled_elementwise_kernel                       |     353184   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97728   0.36   0.52
+elementwise_kernel                                |      16288   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36480   0.37   0.06
+vectorized_elementwise_kernel                     |       9920   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+reduce_kernel                                     |      16672   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      28032   0.00   0.06
+unrolled_elementwise_kernel                       |      16992   0.00   0.09
+vectorized_elementwise_kernel                     |      11520   0.00   0.27
+reduce_kernel                                     |      14656   0.00   0.21
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22912   0.00   0.07
+unrolled_elementwise_kernel                       |      17312   0.00   0.18
+elementwise_kernel                                |      16064   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36384   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32992   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33312   0.40   0.06
+Kernel                                            |     305792   0.12   0.14
+vectorized_elementwise_kernel                     |     167712   0.00   0.84
+unrolled_elementwise_kernel                       |     359968   0.00   0.39
+cunn_SoftMaxForward                               |     384640   0.01   0.49
+unrolled_elementwise_kernel                       |     352928   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      98240   0.36   0.52
+elementwise_kernel                                |      16192   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36096   0.37   0.06
+vectorized_elementwise_kernel                     |      10144   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16640   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+elementwise_kernel                                |      28704   0.00   0.06
+unrolled_elementwise_kernel                       |      17088   0.00   0.09
+vectorized_elementwise_kernel                     |      11552   0.00   0.27
+reduce_kernel                                     |      14176   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      23136   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      15680   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80896   0.67   0.05
+vectorized_elementwise_kernel                     |      20160   0.00   0.31
+Kernel                                            |      87008   0.61   0.10
+vectorized_elementwise_kernel                     |      10080   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16832   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3968   0.00   0.00
+vectorized_elementwise_kernel                     |       4832   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28544   0.00   0.06
+unrolled_elementwise_kernel                       |      17280   0.00   0.09
+vectorized_elementwise_kernel                     |      11616   0.00   0.27
+reduce_kernel                                     |      14336   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22784   0.00   0.07
+unrolled_elementwise_kernel                       |      17440   0.00   0.18
+elementwise_kernel                                |      16064   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32832   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33152   0.41   0.06
+Kernel                                            |     305856   0.12   0.14
+elementwise_kernel                                |     952736   0.01   0.72
+unrolled_elementwise_kernel                       |     360352   0.00   0.39
+cunn_SoftMaxForward                               |     446080   0.02   0.42
+unrolled_elementwise_kernel                       |     353056   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97376   0.36   0.52
+elementwise_kernel                                |      16288   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36320   0.37   0.06
+vectorized_elementwise_kernel                     |      10272   0.00   0.30
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16736   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      28800   0.00   0.06
+unrolled_elementwise_kernel                       |      17184   0.00   0.09
+vectorized_elementwise_kernel                     |      11360   0.00   0.27
+reduce_kernel                                     |      14080   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+elementwise_kernel                                |      23008   0.00   0.07
+unrolled_elementwise_kernel                       |      16896   0.00   0.18
+elementwise_kernel                                |      15712   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36160   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33056   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33088   0.41   0.06
+Kernel                                            |     305664   0.12   0.14
+vectorized_elementwise_kernel                     |     167584   0.00   0.84
+unrolled_elementwise_kernel                       |     360288   0.00   0.39
+cunn_SoftMaxForward                               |     385248   0.01   0.49
+unrolled_elementwise_kernel                       |     352864   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97152   0.36   0.53
+elementwise_kernel                                |      16544   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36224   0.37   0.06
+vectorized_elementwise_kernel                     |       9888   0.00   0.31
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16576   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4672   0.00   0.00
+elementwise_kernel                                |      28576   0.00   0.06
+unrolled_elementwise_kernel                       |      17024   0.00   0.09
+vectorized_elementwise_kernel                     |      11776   0.00   0.26
+reduce_kernel                                     |      14304   0.00   0.22
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22976   0.00   0.07
+unrolled_elementwise_kernel                       |      17536   0.00   0.18
+elementwise_kernel                                |      15776   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80704   0.68   0.05
+vectorized_elementwise_kernel                     |      20192   0.00   0.31
+Kernel                                            |      87104   0.61   0.10
+vectorized_elementwise_kernel                     |      10272   0.00   0.30
+vectorized_elementwise_kernel                     |       8608   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16832   0.00   0.05
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28512   0.00   0.06
+unrolled_elementwise_kernel                       |      17120   0.00   0.09
+vectorized_elementwise_kernel                     |      11552   0.00   0.27
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4256   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22816   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      15616   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36448   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32832   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33216   0.40   0.06
+Kernel                                            |     305856   0.12   0.14
+elementwise_kernel                                |     962016   0.01   0.72
+unrolled_elementwise_kernel                       |     360384   0.00   0.39
+cunn_SoftMaxForward                               |     445472   0.02   0.43
+unrolled_elementwise_kernel                       |     352768   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      98848   0.36   0.52
+elementwise_kernel                                |      16416   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36512   0.37   0.06
+vectorized_elementwise_kernel                     |       9952   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16896   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3744   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      27936   0.00   0.06
+unrolled_elementwise_kernel                       |      17152   0.00   0.09
+vectorized_elementwise_kernel                     |      11680   0.00   0.27
+reduce_kernel                                     |      14464   0.00   0.22
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23296   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15840   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36288   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33120   0.41   0.06
+Kernel                                            |     305792   0.12   0.14
+vectorized_elementwise_kernel                     |     167392   0.00   0.84
+unrolled_elementwise_kernel                       |     359744   0.00   0.39
+cunn_SoftMaxForward                               |     384320   0.01   0.49
+unrolled_elementwise_kernel                       |     352800   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      95264   0.37   0.54
+elementwise_kernel                                |      16416   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36384   0.37   0.06
+vectorized_elementwise_kernel                     |      10112   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16704   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+elementwise_kernel                                |      29216   0.00   0.05
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11808   0.00   0.26
+reduce_kernel                                     |      14368   0.00   0.22
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+elementwise_kernel                                |      23040   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15552   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80576   0.68   0.05
+vectorized_elementwise_kernel                     |      20128   0.00   0.31
+Kernel                                            |      87424   0.61   0.10
+vectorized_elementwise_kernel                     |      10400   0.00   0.30
+vectorized_elementwise_kernel                     |       8640   0.00   0.18
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+reduce_kernel                                     |      16704   0.00   0.05
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4064   0.00   0.00
+elementwise_kernel                                |      28384   0.00   0.06
+unrolled_elementwise_kernel                       |      17280   0.00   0.09
+vectorized_elementwise_kernel                     |      11360   0.00   0.27
+reduce_kernel                                     |      14464   0.00   0.22
+vectorized_elementwise_kernel                     |       4352   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23008   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15648   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36224   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33056   0.41   0.06
+Kernel                                            |     305792   0.12   0.14
+elementwise_kernel                                |     944192   0.01   0.73
+unrolled_elementwise_kernel                       |     360320   0.00   0.39
+cunn_SoftMaxForward                               |     445984   0.02   0.42
+unrolled_elementwise_kernel                       |     352800   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      98112   0.36   0.52
+elementwise_kernel                                |      16544   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36384   0.37   0.06
+vectorized_elementwise_kernel                     |      10144   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16640   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      28512   0.00   0.06
+unrolled_elementwise_kernel                       |      17120   0.00   0.09
+vectorized_elementwise_kernel                     |      11520   0.00   0.27
+reduce_kernel                                     |      14560   0.00   0.21
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      23360   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15904   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32928   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33216   0.40   0.06
+Kernel                                            |     305632   0.12   0.14
+vectorized_elementwise_kernel                     |     167840   0.00   0.84
+unrolled_elementwise_kernel                       |     360576   0.00   0.38
+cunn_SoftMaxForward                               |     384160   0.01   0.49
+unrolled_elementwise_kernel                       |     352960   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97632   0.36   0.52
+elementwise_kernel                                |      16704   0.02   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36512   0.37   0.06
+vectorized_elementwise_kernel                     |      10176   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+reduce_kernel                                     |      16576   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28320   0.00   0.06
+unrolled_elementwise_kernel                       |      17312   0.00   0.09
+vectorized_elementwise_kernel                     |      11520   0.00   0.27
+reduce_kernel                                     |      14272   0.00   0.22
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22912   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      15680   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81024   0.67   0.05
+vectorized_elementwise_kernel                     |      20160   0.00   0.31
+Kernel                                            |      87392   0.61   0.10
+vectorized_elementwise_kernel                     |      10016   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16832   0.00   0.05
+vectorized_elementwise_kernel                     |       3552   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4544   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      28128   0.00   0.06
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11840   0.00   0.26
+reduce_kernel                                     |      14272   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+elementwise_kernel                                |      22720   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15808   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36256   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33120   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33184   0.41   0.06
+Kernel                                            |     305664   0.12   0.14
+elementwise_kernel                                |     967104   0.01   0.71
+unrolled_elementwise_kernel                       |     360608   0.00   0.38
+cunn_SoftMaxForward                               |     445536   0.02   0.43
+unrolled_elementwise_kernel                       |     352704   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      96000   0.37   0.53
+elementwise_kernel                                |      16480   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36128   0.37   0.06
+vectorized_elementwise_kernel                     |      10016   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16736   0.00   0.05
+vectorized_elementwise_kernel                     |       3808   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      28128   0.00   0.06
+unrolled_elementwise_kernel                       |      17248   0.00   0.09
+vectorized_elementwise_kernel                     |      11616   0.00   0.27
+reduce_kernel                                     |      14240   0.00   0.22
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22528   0.00   0.07
+unrolled_elementwise_kernel                       |      17216   0.00   0.18
+elementwise_kernel                                |      15584   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36288   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32928   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33088   0.41   0.06
+Kernel                                            |     305760   0.12   0.14
+vectorized_elementwise_kernel                     |     166560   0.00   0.85
+unrolled_elementwise_kernel                       |     359872   0.00   0.39
+cunn_SoftMaxForward                               |     385024   0.01   0.49
+unrolled_elementwise_kernel                       |     353600   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|     100224   0.35   0.51
+elementwise_kernel                                |      16448   0.03   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36512   0.37   0.06
+vectorized_elementwise_kernel                     |      10048   0.00   0.31
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8544   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3680   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+vectorized_elementwise_kernel                     |       4608   0.00   0.00
+elementwise_kernel                                |      28320   0.00   0.06
+unrolled_elementwise_kernel                       |      17056   0.00   0.09
+vectorized_elementwise_kernel                     |      11104   0.00   0.28
+reduce_kernel                                     |      14560   0.00   0.21
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      22976   0.00   0.07
+unrolled_elementwise_kernel                       |      17280   0.00   0.18
+elementwise_kernel                                |      16384   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      81184   0.67   0.05
+vectorized_elementwise_kernel                     |      20224   0.00   0.31
+Kernel                                            |      87744   0.60   0.10
+vectorized_elementwise_kernel                     |      10048   0.00   0.31
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16544   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3872   0.00   0.00
+vectorized_elementwise_kernel                     |       4640   0.00   0.00
+vectorized_elementwise_kernel                     |       4512   0.00   0.00
+elementwise_kernel                                |      28480   0.00   0.06
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11712   0.00   0.27
+reduce_kernel                                     |      14400   0.00   0.22
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      23232   0.00   0.07
+unrolled_elementwise_kernel                       |      17152   0.00   0.18
+elementwise_kernel                                |      15936   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36512   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32864   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33152   0.41   0.06
+Kernel                                            |     305792   0.12   0.14
+elementwise_kernel                                |     967648   0.01   0.71
+unrolled_elementwise_kernel                       |     360960   0.00   0.38
+cunn_SoftMaxForward                               |     445440   0.02   0.43
+unrolled_elementwise_kernel                       |     352928   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97408   0.36   0.52
+elementwise_kernel                                |      16672   0.02   0.09
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36448   0.37   0.06
+vectorized_elementwise_kernel                     |       9984   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16608   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+vectorized_elementwise_kernel                     |       4576   0.00   0.00
+elementwise_kernel                                |      28544   0.00   0.06
+unrolled_elementwise_kernel                       |      17088   0.00   0.09
+vectorized_elementwise_kernel                     |      11520   0.00   0.27
+reduce_kernel                                     |      14304   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+elementwise_kernel                                |      23136   0.00   0.07
+unrolled_elementwise_kernel                       |      17056   0.00   0.18
+elementwise_kernel                                |      15680   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      32896   0.41   0.06
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      33216   0.41   0.06
+Kernel                                            |     305568   0.12   0.14
+vectorized_elementwise_kernel                     |     167648   0.00   0.84
+unrolled_elementwise_kernel                       |     360800   0.00   0.38
+cunn_SoftMaxForward                               |     386496   0.01   0.49
+unrolled_elementwise_kernel                       |     352800   0.00   0.41
+ampere_fp16_s16816gemm_fp16_64x128_sliced1x2_ld...|      97984   0.36   0.52
+elementwise_kernel                                |      16384   0.03   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize1...|      36416   0.37   0.06
+vectorized_elementwise_kernel                     |      10112   0.00   0.31
+vectorized_elementwise_kernel                     |       8480   0.00   0.18
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+reduce_kernel                                     |      16640   0.00   0.05
+vectorized_elementwise_kernel                     |       3648   0.00   0.00
+vectorized_elementwise_kernel                     |       3712   0.00   0.00
+vectorized_elementwise_kernel                     |       4384   0.00   0.00
+vectorized_elementwise_kernel                     |       4128   0.00   0.00
+elementwise_kernel                                |      28896   0.00   0.05
+unrolled_elementwise_kernel                       |      17216   0.00   0.09
+vectorized_elementwise_kernel                     |      11776   0.00   0.26
+reduce_kernel                                     |      14272   0.00   0.22
+vectorized_elementwise_kernel                     |       4416   0.00   0.00
+vectorized_elementwise_kernel                     |       4480   0.00   0.00
+elementwise_kernel                                |      22976   0.00   0.07
+unrolled_elementwise_kernel                       |      17120   0.00   0.18
+elementwise_kernel                                |      15936   0.02   0.10
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize9...|      80960   0.67   0.05
+vectorized_elementwise_kernel                     |      20128   0.00   0.31
+Kernel                                            |      88128   0.60   0.10
+vectorized_elementwise_kernel                     |      10432   0.00   0.30
+vectorized_elementwise_kernel                     |       8512   0.00   0.18
+vectorized_elementwise_kernel                     |       8576   0.00   0.18
+reduce_kernel                                     |      16544   0.00   0.05
+vectorized_elementwise_kernel                     |       3584   0.00   0.00
+vectorized_elementwise_kernel                     |       3520   0.00   0.00
+vectorized_elementwise_kernel                     |       4320   0.00   0.00
+vectorized_elementwise_kernel                     |       4032   0.00   0.00
+elementwise_kernel                                |      28160   0.00   0.06
+unrolled_elementwise_kernel                       |      17344   0.00   0.09
+vectorized_elementwise_kernel                     |      11296   0.00   0.28
+reduce_kernel                                     |      14496   0.00   0.22
+vectorized_elementwise_kernel                     |       4288   0.00   0.00
+vectorized_elementwise_kernel                     |       4448   0.00   0.00
+elementwise_kernel                                |      22752   0.00   0.07
+unrolled_elementwise_kernel                       |      17504   0.00   0.18
+elementwise_kernel                                |      15968   0.02   0.10
+vectorized_elementwise_kernel                     |       8448   0.00   0.18
+ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_st...|     699904   0.79   0.15
