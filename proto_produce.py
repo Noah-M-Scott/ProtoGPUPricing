@@ -5,6 +5,7 @@ import pickle
 import os
 import random
 import struct
+import re
 from datetime import datetime
 
 # ==============================================================================
@@ -20,7 +21,6 @@ NUM_PRODUCERS = 4  # The number of producer threads to create.
 NODE_NUMEBER = 0   # Index of the current node
 
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
-TRACE_FILES = [f"traces/trace_{i}.trace" for i in range(NUM_PRODUCERS)]
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
 M_MICROSECONDS = 50    # Interval to process data and add to log
 K_ITEMS = 131072       # Number of items in the temporary list before sending.
@@ -38,6 +38,18 @@ def pricing_function(bandwidth: int, compute: int) -> float:
 #  Producer Thread (Type A)
 # ==============================================================================
 
+def get_files_in_directory(directory_path):
+    """
+    Returns a list of all files in the specified directory.
+    """
+    files = []
+    for entry in os.listdir(directory_path):
+        full_path = os.path.join(directory_path, entry)
+        if os.path.isfile(full_path):
+            files.append(full_path)
+    return files
+
+
 def producer_thread_func(index: int):
     """
     The main function for a producer thread.
@@ -47,14 +59,21 @@ def producer_thread_func(index: int):
     """
     print(f"[Producer {index}] Starting.")
     thread_name = f"Producer {index + NODE_NUMEBER * NUM_PRODUCERS}"
-
+    
+    TRACE_FILES = get_files_in_directory("traces")
+    
     try:
         # --- File and variable setup ---
-        trace_file_name = TRACE_FILES[index]
+        trace_file_name = TRACE_FILES[random.randint(0, len(TRACE_FILES) - 1)]
         with open(trace_file_name, 'r') as f:
             # Read all comma-separated values at once and create an iterator
-            values = iter(f.read().split(','))
-
+            values = iter(re.split(r"[\s\|]+", f.read()))
+            next(values) #burn headers
+            next(values)
+            next(values)
+            next(values)
+        print(f"[{thread_name}] trace selected is {trace_file_name}")
+        
         # --- Connect to consumer socket ---
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         client_socket.connect((HOST, PORT))
@@ -76,6 +95,7 @@ def producer_thread_func(index: int):
             if (current_time - last_read_time) / 1000 >= latency:
             #if int(current_time - last_read_time) >= N_MICROSECONDS:
                 try:
+                    next(values) #burn the name
                     latency = int(next(values))
                     compute = int(float(next(values)) * 100)
                     bandwidth = int(float(next(values)) * 100)
@@ -84,10 +104,18 @@ def producer_thread_func(index: int):
                 except StopIteration:
                     # End of file reached
                     if runs < RUN_TIMES :
-                        with open(trace_file_name, 'r') as f:
-                            values = iter(f.read().split(','))
-                        runs += 1
                         print(f"[{thread_name}] Reached end of trace file.")
+                        trace_file_name = TRACE_FILES[random.randint(0, len(TRACE_FILES) - 1)]
+                        with open(trace_file_name, 'r') as f:
+                            # Read all comma-separated values at once and create an iterator
+                            values = iter(re.split(r"[\s\|]+", f.read()))
+                            next(values) #burn headers
+                            next(values)
+                            next(values)
+                            next(values)
+                        print(f"[{thread_name}] trace selected is {trace_file_name}")
+                        
+                        runs += 1
                     else:
                         print(f"[{thread_name}] Has finished runs.")
                         break # Exit the main while loop
