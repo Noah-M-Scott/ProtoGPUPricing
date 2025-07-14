@@ -1,0 +1,39 @@
+Kernel                                                 Latency Tensor   DRAM
+cask_cudnn_infer::computeOffsetsKernel            |       4928   0.00   0.00
+cudnn_infer_ampere_fp16_scudnn_fp16_128x64_relu...|    1788096   0.00   0.02
+elementwise_kernel                                |     185568   0.05   0.21
+vectorized_elementwise_kernel                     |      65376   0.00   0.59
+max_pool_forward_nchw                             |     255456   0.01   0.18
+cudnn::ops::nchwToNhwcKernel                      |      26336   0.00   0.23
+cudnn::ops::nchwToNhwcKernel                      |       6912   0.00   0.04
+sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32...|     413120   0.76   0.04
+cudnn::ops::nhwcToNchwKernel                      |      77120   0.00   0.37
+elementwise_kernel                                |     133696   0.05   0.19
+vectorized_elementwise_kernel                     |      48448   0.00   0.52
+max_pool_forward_nchw                             |     179008   0.01   0.17
+cudnn::ops::nchwToNhwcKernel                      |      20352   0.00   0.20
+cudnn::ops::nchwToNhwcKernel                      |      13408   0.00   0.05
+cutlass_cudnn_infer::Kernel                       |     197152   0.80   0.02
+cudnn::ops::nhwcToNchwKernel                      |      41280   0.00   0.24
+elementwise_kernel                                |      62912   0.05   0.13
+vectorized_elementwise_kernel                     |      24896   0.00   0.33
+cudnn::ops::nchwToNhwcKernel                      |      34816   0.00   0.30
+cudnn::ops::nchwToNhwcKernel                      |      15840   0.00   0.06
+cutlass_cudnn_infer::Kernel                       |     286592   0.73   0.03
+cudnn::ops::nhwcToNchwKernel                      |      29248   0.00   0.19
+elementwise_kernel                                |      44384   0.04   0.12
+vectorized_elementwise_kernel                     |      18304   0.00   0.30
+cudnn::ops::nchwToNhwcKernel                      |      24992   0.00   0.22
+cudnn::ops::nchwToNhwcKernel                      |      12320   0.00   0.05
+cutlass_cudnn_infer::Kernel                       |     200032   0.70   0.03
+cudnn::ops::nhwcToNchwKernel                      |      28672   0.00   0.19
+elementwise_kernel                                |      44320   0.04   0.12
+vectorized_elementwise_kernel                     |      18368   0.00   0.30
+max_pool_forward_nchw                             |      54944   0.01   0.10
+adaptive_average_pool                             |     238624   0.00   0.00
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f...|     147008   0.36   0.26
+vectorized_elementwise_kernel                     |       6368   0.00   0.08
+ampere_fp16_s16816gemm_fp16_64x128_ldg8_relu_f2...|      58720   0.40   0.29
+vectorized_elementwise_kernel                     |       6112   0.00   0.09
+ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stag...|      21824   0.27   0.21
+splitKreduce_kernel                               |       7968   0.01   0.05
