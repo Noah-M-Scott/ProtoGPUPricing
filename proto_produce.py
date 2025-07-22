@@ -6,6 +6,7 @@ import os
 import random
 import struct
 import re
+from queue import Queue
 from datetime import datetime
 
 # ==============================================================================
@@ -26,6 +27,12 @@ M_MICROSECONDS = 50    # Interval to process data and add to log
 K_ITEMS = 131072       # Number of items in the temporary list before sending.
 RUN_TIMES = 3          # Number of times to rerun the trace
 
+# Thread Queues
+THREAD_QUEUES = []
+for i in range(0, NUM_PRODUCERS):
+    THREAD_QUEUES.append(Queue())
+
+
 # ==============================================================================
 #  Pricing Function
 # ==============================================================================
@@ -35,7 +42,18 @@ def pricing_function(bandwidth: int, compute: int) -> float:
     return price
 
 # ==============================================================================
-#  Producer Thread (Type A)
+#  Encryption Function
+# ==============================================================================
+
+def encryption_function(packet):
+    
+    #encrypt
+    
+    return packet
+
+
+# ==============================================================================
+#  Producer Thread
 # ==============================================================================
 
 def get_files_in_directory(directory_path):
@@ -50,15 +68,82 @@ def get_files_in_directory(directory_path):
     return files
 
 
+def producer_packet_manager_func(index: int):
+    """
+    The helper function for a producer thread.
+    - Connects to the consumer's socket.
+    - Recieves data packets from it's sampling twin
+    - Periodically processes (encrypts) and sends data to the consumer.
+    """
+    
+    thread_name = f"Producer {index + NODE_NUMEBER * NUM_PRODUCERS}"
+    print(f"[Producer {index + NODE_NUMEBER * NUM_PRODUCERS} Manager] Starting.")
+    
+    
+    try:
+        # --- Connect to consumer socket ---
+        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        client_socket.connect((HOST, PORT))
+        print(f"[{thread_name}] Connected to consumer at {HOST}:{PORT}")
+        
+        # --- State variables ---
+        last_read_time = time.perf_counter_ns()
+        last_process_time = time.perf_counter_ns()
+        
+        # --- Main loop ---
+        while True:
+            payload = THREAD_QUEUES[index].get()
+            
+            #null payload for shutdown
+            if payload['index'] == -1:
+                break
+            
+            #otherwise...
+            
+            #do encryption
+            payload = encryption_function(payload)
+            print(f"[{thread_name}] payload encrypted, took X seconds (DATA VOLUME MEASURE POINT #1)")
+            
+            
+            #and send
+            serialized_payload = pickle.dumps(payload)
+            
+            data_length = len(serialized_payload)
+            
+            length_header = struct.pack("!I", data_length) 
+            
+            
+            print(f"[{thread_name}] Sending batch of {len(payload['data'])} items.")
+            client_socket.sendall(length_header + serialized_payload)
+        
+        
+        # Send the "I'm done" message
+        print(f"[{thread_name}] Sending 'I'm done' message and shutting down.")
+        done_message = pickle.dumps(f"DONE:{index}")
+        
+        data_length = len(done_message)
+        length_header = struct.pack("!I", data_length) 
+        
+        client_socket.sendall(length_header + done_message)
+        client_socket.close()
+        print(f"[{thread_name}] Finished.")
+        
+        
+    except ConnectionRefusedError:
+        print(f"[ERROR][{thread_name}] Connection refused. Is the consumer server running?")
+    
+    return
+
+
 def producer_thread_func(index: int):
     """
     The main function for a producer thread.
-    - Connects to the consumer's socket.
     - Reads data from its assigned trace file.
-    - Periodically processes and sends data to the consumer.
+    - Periodically sends data packets to it's manager twin
     """
-    print(f"[Producer {index}] Starting.")
+    
     thread_name = f"Producer {index + NODE_NUMEBER * NUM_PRODUCERS}"
+    print(f"[Producer {index + NODE_NUMEBER * NUM_PRODUCERS} Sampler] Starting.")
     
     TRACE_FILES = get_files_in_directory("traces")
     
@@ -66,7 +151,7 @@ def producer_thread_func(index: int):
         # --- File and variable setup ---
         trace_file_name = TRACE_FILES[random.randint(0, len(TRACE_FILES) - 1)]
         with open(trace_file_name, 'r') as f:
-            # Read all comma-separated values at once and create an iterator
+            # Read all whitespace/'|'-separated values at once and create an iterator
             values = iter(re.split(r"[\s\|]+", f.read()))
             next(values) #burn headers
             next(values)
@@ -74,15 +159,11 @@ def producer_thread_func(index: int):
             next(values)
         print(f"[{thread_name}] trace selected is {trace_file_name}")
         
-        # --- Connect to consumer socket ---
-        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client_socket.connect((HOST, PORT))
-        print(f"[{thread_name}] Connected to consumer at {HOST}:{PORT}")
-        
         # --- State variables ---
         temp_list = []
         amount_owed = 0.0
         bandwidth, compute, latency, packet_counter, runs = 0, 0, 0, 0, 0
+        actualTime_accum, actualTime_count = 0, 0
         
         last_read_time = time.perf_counter_ns()
         last_process_time = time.perf_counter_ns()
@@ -92,11 +173,12 @@ def producer_thread_func(index: int):
             current_time = time.perf_counter_ns()
             
             # --- Task 1: Read from trace file every N microseconds (or according to a per file per line latency) ---
-            if (current_time - last_read_time) / 1000 >= latency:
             #if int(current_time - last_read_time) >= N_MICROSECONDS:
+            if (current_time - last_read_time) * 0.001 >= latency:
+                
                 try:
                     next(values) #burn the name
-                    latency = int(next(values))
+                    latency = int(next(values)) / 1000 #nano to micro
                     compute = int(float(next(values)) * 100)
                     bandwidth = int(float(next(values)) * 100)
                     #print(f"[{thread_name}] Read: lt={latency}, bw={bandwidth}, comp={compute}") # Uncomment for verbose logging
@@ -122,7 +204,12 @@ def producer_thread_func(index: int):
             
             
             # --- Task 2: Process and potentially send data every M microseconds ---
-            if (current_time - last_process_time) / 1000 >= M_MICROSECONDS:
+            if (current_time - last_process_time) * 0.001 >= M_MICROSECONDS:
+                
+                # Test for bad slowdown
+                actualTime_accum += (current_time - last_process_time) * 0.001 
+                actualTime_count += 1
+                
                 # Accumulate amount owed
                 amount_owed += pricing_function(bandwidth, compute)
                 # Add to temporary list
@@ -138,23 +225,16 @@ def producer_thread_func(index: int):
                         "amountOwed": amount_owed,
                         "data": temp_list
                     }
-                    serialized_payload = pickle.dumps(payload)
                     
-                    data_length = len(serialized_payload)
-                    
-                    length_header = struct.pack("!I", data_length) 
-                    
-                    
-                    print(f"[{thread_name}] Sending batch of {len(temp_list)} items.")
-                    client_socket.sendall(length_header + serialized_payload)
+                    #send to manager
+                    THREAD_QUEUES[index].put(payload)
                     
                     # Reset the temporary list for the next batch
                     temp_list = []
                     
                     #next packet
                     packet_counter += 1
-            
-            
+        
         
         # --- Termination ---
         # Send any remaining data before closing
@@ -165,79 +245,50 @@ def producer_thread_func(index: int):
                 "amountOwed": amount_owed,
                 "data": temp_list
             }
-            serialized_payload = pickle.dumps(payload)
             
-            data_length = len(serialized_payload)
-            
-            length_header = struct.pack("!I", data_length) 
-            
-            print(f"[{thread_name}] Sending final batch of {len(temp_list)} items.")
-            client_socket.sendall(length_header + serialized_payload)
-            
-        # Send the "I'm done" message
-        print(f"[{thread_name}] Sending 'I'm done' message and shutting down.")
-        done_message = pickle.dumps(f"DONE:{index}")
+            #send to manager
+            THREAD_QUEUES[index].put(payload)
         
-        data_length = len(done_message)
-        length_header = struct.pack("!I", data_length) 
         
-        client_socket.sendall(length_header + done_message)
-        client_socket.close()
+        # Send finish comand to manager
+        payload = { "index": -1 }
+        THREAD_QUEUES[index].put(payload)
+        
         print(f"[{thread_name}] Finished.")
+        print(f"Average sample time was {actualTime_accum / actualTime_count}")
         
         
     except FileNotFoundError:
         print(f"[ERROR][{thread_name}] Trace file not found: {trace_file_name}")
-    except ConnectionRefusedError:
-        print(f"[ERROR][{thread_name}] Connection refused. Is the consumer server running?")
+    
+    return
 
 
 # ==============================================================================
-#  Utility and Main Execution
+#  Main Execution
 # ==============================================================================
-
-def generate_dummy_trace_files():
-    """Creates dummy trace files for the producers to read."""
-    print("[Main] Generating dummy trace files...")
-    for i in range(NUM_PRODUCERS):
-        filename = TRACE_FILES[i]
-        with open(filename, 'w') as f:
-            # Generate a random number of data points for each file
-            num_values = random.randint(200, 500) * 2 # must be even
-            data = [str(random.randint(50, 1000)) for _ in range(num_values)]
-            f.write(",".join(data))
-    print("[Main] Dummy trace files generated.")
-
-def cleanup_generated_files():
-    """Removes the generated trace files and buffer directory."""
-    print("[Main] Cleaning up generated files...")
-    for filename in TRACE_FILES:
-        if os.path.exists(filename):
-            os.remove(filename)
-    if os.path.exists(BUFFER_DIR):
-        for buffer_file in os.listdir(BUFFER_DIR):
-            os.remove(os.path.join(BUFFER_DIR, buffer_file))
-        os.rmdir(BUFFER_DIR)
-    print("[Main] Cleanup complete.")
-
 
 if __name__ == "__main__":
-    # Generate files needed for the simulation
-    #generate_dummy_trace_files()
     
-    # --- Start Producers (Type A) ---
+    # --- Start Producers ---
     producer_threads = []
     for i in range(NUM_PRODUCERS):
+        
+        #manager
+        thread = threading.Thread(target=producer_packet_manager_func, args=(i,))
+        producer_threads.append(thread)
+        thread.start()
+        
+        #sampler
         thread = threading.Thread(target=producer_thread_func, args=(i,))
         producer_threads.append(thread)
         thread.start()
-
+    
+    
     # --- Wait for all threads to complete ---
     for thread in producer_threads:
         thread.join()
     
 
     print("\n[Main] All threads have completed their execution.")
-
-    # Clean up the simulation files
-    #cleanup_generated_files()
+    
