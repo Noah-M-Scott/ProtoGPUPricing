@@ -23,7 +23,7 @@ BUFFER_DIR = "circular_buffers" # Directory to store buffer files.
 
 
 # ==============================================================================
-#  Consumer Thread (Type B)
+#  Consumer Thread
 # ==============================================================================
 
 class ConsumerServer:
@@ -120,9 +120,12 @@ class ConsumerServer:
             "data": payload['data']
         }
         
+        print(f"Received {len(payload['data'])} long payload from {thread_index}; current data input per second is X bytes (DATA VOLUME MEASURE POINT #2)")
+        
         buffer_file = os.path.join(BUFFER_DIR, f"buffer_{thread_index}.pkl")
         
         # Lock the specific file for this thread to prevent race conditions
+        print("Writing to disk... current database size is X kilobytes (DATA VOLUME MEASURE POINT #3)")
         with self.buffer_locks[thread_index]:
             # --- THIS IS THE INEFFICIENT PART AS REQUESTED ---
             # 1. Read the entire existing buffer from disk
@@ -176,10 +179,8 @@ class ConsumerServer:
 
 
 if __name__ == "__main__":
-    # Generate files needed for the simulation
-    #generate_dummy_trace_files()
     
-    # --- Start Consumer (Type B) ---
+    # --- Start Consumer ---
     consumer_server = ConsumerServer(HOST, PORT)
     consumer_thread = threading.Thread(target=consumer_server.start)
     consumer_thread.start()
@@ -191,6 +192,4 @@ if __name__ == "__main__":
     consumer_thread.join()
 
     print("\n[Main] All threads have completed their execution.")
-
-    # Clean up the simulation files
-    #cleanup_generated_files()
+    
