@@ -255,7 +255,7 @@ def producer_thread_func(index: int):
         THREAD_QUEUES[index].put(payload)
         
         print(f"[{thread_name}] Finished.")
-        print(f"Average sample time was {actualTime_accum / actualTime_count}")
+        print(f"[{thread_name}] Average sample time was {actualTime_accum / actualTime_count}")
         
         
     except FileNotFoundError:
