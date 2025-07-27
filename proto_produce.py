@@ -6,6 +6,7 @@ import os
 import random
 import struct
 import re
+import hashlib
 from queue import Queue
 from datetime import datetime
 
@@ -45,11 +46,12 @@ def pricing_function(bandwidth: int, compute: int) -> float:
 #  Encryption Function
 # ==============================================================================
 
-def encryption_function(packet):
-    
+def encryption_function(arr):    
     #encrypt
     
-    return packet
+    m = hashlib.sha256()
+    
+    return hashlib.sha256(arr).digest()
 
 
 # ==============================================================================
@@ -101,7 +103,7 @@ def producer_packet_manager_func(index: int):
             #otherwise...
             
             #do encryption
-            payload = encryption_function(payload)
+            payload["data"] = encryption_function(payload["data"])
             print(f"[{thread_name}] payload encrypted, took X seconds (DATA VOLUME MEASURE POINT #1)")
             
             
