@@ -13,6 +13,7 @@ from Cryptodome.Cipher import AES
 from Cryptodome.Random import get_random_bytes
 from Cryptodome.Protocol.KDF import scrypt
 import base64
+import sys
 #pip install pycryptodome
 
 # ==============================================================================
@@ -28,7 +29,7 @@ NUM_PRODUCERS = 4  # The number of producer threads to create.
 
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
-M_MICROSECONDS = 50    # Interval to process data and add to log
+M_MICROSECONDS = 50    # Interval to process data and add to log (sampling rate)
 K_ITEMS = 131072       # Number of items in the temporary list before sending.
 RUN_TIMES = 3          # Number of times to rerun the trace
 
@@ -298,6 +299,17 @@ def producer_thread_func(index: int):
 # ==============================================================================
 
 if __name__ == "__main__":
+    
+    
+    if len(sys.argv) > 2:
+        HOST = f"{sys.argv[1]}";
+        M_MICROSECONDS = int(sys.argv[2])
+        print(M_MICROSECONDS)
+    else:
+        print("bad arguments provided, need consumer ip address followed by sampling rate (microseconds)")
+        exit()
+    
+    
     
     # --- Start Producers ---
     producer_threads = []
