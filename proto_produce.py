@@ -128,6 +128,8 @@ def producer_packet_manager_func(index: int):
             payload["data"] = encryption_function(payload["data"], "password")
             #print(f"[{thread_name}] payload encrypted, took X seconds (DATA VOLUME MEASURE POINT #1)")
             
+            #mark time
+            payload["timestamp"] = time.time();
             
             #and send
             serialized_payload = pickle.dumps(payload)
@@ -135,7 +137,6 @@ def producer_packet_manager_func(index: int):
             data_length = len(serialized_payload)
             
             length_header = struct.pack("!I", data_length) 
-            
             
             print(f"[{thread_name}] Sending batch of {len(payload['data']['ciphertext'])} items.")
             client_socket.sendall(length_header + serialized_payload)
@@ -243,7 +244,7 @@ def producer_thread_func(index: int):
                 
                 # Check if the list is ready to be sent
                 if len(temp_list) >= K_ITEMS:
-                    senttime = time.time()
+                    senttime = 0;
                     payload = {
                         "index": thread_name,
                         "packet": packet_counter,
@@ -265,7 +266,7 @@ def producer_thread_func(index: int):
         # --- Termination ---
         # Send any remaining data before closing
         if temp_list:
-            senttime = time.time()
+            senttime = 0;
             payload = {
                 "index": thread_name,
                 "packet":packet_counter,
