@@ -104,7 +104,7 @@ Kernel                                            |     229920   0.46   0.31
 reduce_kernel                                     |      16800   0.00   0.06
 vectorized_elementwise_kernel                     |      10592   0.00   0.28
 vectorized_elementwise_kernel                     |       7200   0.01   0.00
-atomic_adaptive_average_gradin|ut                 |     215040   0.00   0.02
+atomic_adaptive_average_gradin-ut                 |     215040   0.00   0.02
 vectorized_elementwise_kernel                     |      18080   0.01   0.05
 max_pool_backward_nchw                            |     235904   0.00   0.06
 vectorized_elementwise_kernel                     |      43872   0.00   0.61
