@@ -18,9 +18,7 @@ PORT = 65432        # Server port to listen on
 
 # --- Consumer (Type B) Constants ---
 NUM_PRODUCERS = 4  # The number of producer threads to expect (threads per node * nodes).
-X_RECORDS = 64  # Max number of records in the on-disk circular buffer.
-BUFFER_DIR = "circular_buffers" # Directory to store buffer files.
-
+LOG_DIR = "consumer_log"
 
 # ==============================================================================
 #  Consumer Thread
@@ -40,8 +38,8 @@ class ConsumerServer:
         self.producers_done_count = 0
         self.DROP_COUNTER = 0
         self.lock = threading.Lock() # To protect the done count
-        self.buffer_locks = {i: threading.Lock() for i in range(NUM_PRODUCERS)} # Per-file locks
-        self.packet_counts = [0] * NUM_PRODUCERS
+        self.buffer_lock = threading.Lock() # log lock
+        self.packet_counts = {}
         self.shutdown_event = threading.Event()
 
     def _increment_done_count(self):
@@ -105,56 +103,43 @@ class ConsumerServer:
         Processes a received data payload and writes it to the on-disk buffer.
         """
         thread_index = payload['index']
-        timestamp = datetime.now().isoformat()
+        sentstamp = payload['timestamp']
+        timestamp = time.time()
         
-        if self.packet_counts[thread_index] != payload['packet'] :
-            self.DROP_COUNTER += 1
-            print(f"packet dropped {self.DROP_COUNTER} on {thread_index} got {payload['packet']} wanted {self.packet_counts[thread_index]} (ignore if followed by DONE)")
-            self.packet_counts[thread_index] = payload['packet']
-        else:
-            self.packet_counts[thread_index] += 1
+        #if self.packet_counts.get(thread_index) == None :
+        #    self.packet_counts[thread_index] = payload['packet']
+        #
+        #
+        #if self.packet_counts.get(thread_index) != payload['packet'] :
+        #    self.DROP_COUNTER += 1
+        #    print(f"packet dropped {self.DROP_COUNTER} on {thread_index} got {payload['packet']} wanted {self.packet_counts.get(thread_index)} (ignore if followed by DONE)")
+        #    self.packet_counts[thread_index] = payload['packet']
+        #else:
+        #    self.packet_counts[thread_index] += 1
         
-        record_to_add = {
-            "timestamp": timestamp,
-            "amountOwed": payload['amountOwed'],
-            "data": payload['data']
-        }
         
-        print(f"Received {len(payload['data'])} long payload from {thread_index}; current data input per second is X bytes (DATA VOLUME MEASURE POINT #2)")
+        print(f"Received {len(payload['data']['ciphertext'])} long payload from {thread_index}; at {timestamp}, was sent at {sentstamp}")
         
-        buffer_file = os.path.join(BUFFER_DIR, f"buffer_{thread_index}.pkl")
+        log_file = os.path.join(LOG_DIR, "consumer_log.csv") 
         
         # Lock the specific file for this thread to prevent race conditions
-        print("Writing to disk... current database size is X kilobytes (DATA VOLUME MEASURE POINT #3)")
-        with self.buffer_locks[thread_index]:
-            # --- THIS IS THE INEFFICIENT PART AS REQUESTED ---
-            # 1. Read the entire existing buffer from disk
-            try:
-                with open(buffer_file, 'rb') as f:
-                    circular_buffer = pickle.load(f)
-            except (FileNotFoundError, EOFError):
-                circular_buffer = []
-
-            # 2. Update the buffer in memory
-            circular_buffer.append(record_to_add)
-
-            # 3. Enforce circular buffer size limit
-            if len(circular_buffer) > X_RECORDS:
-                circular_buffer = circular_buffer[-X_RECORDS:]
-
-            # 4. Write the entire updated buffer back to disk
-            with open(buffer_file, 'wb') as f:
-                pickle.dump(circular_buffer, f)
-            # --- END OF INEFFICIENT PART ---
-
+        with self.buffer_lock:
+            with open(log_file, 'a') as f:
+                f.write(f"{thread_index}, {sentstamp}, {timestamp}\n")
+            
         # print(f"[Consumer Server] Wrote record from Producer {thread_index} to {buffer_file}")
 
     def start(self):
         """Starts the consumer server."""
         # Create directory for buffers if it doesn't exist
-        if not os.path.exists(BUFFER_DIR):
-            os.makedirs(BUFFER_DIR)
-            print(f"[Consumer Server] Created directory for buffers: {BUFFER_DIR}")
+        if not os.path.exists(LOG_DIR):
+            os.makedirs(LOG_DIR)
+            print(f"[Consumer Server] Created directory for log: {LOG_DIR}")
+        
+        # --- prep log file ---
+        log_file = os.path.join(LOG_DIR, "consumer_log.csv")
+        with open(log_file, 'w') as f:
+            f.write("id, sent_time, recv_time\n")
 
         self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server_socket.bind((self.host, self.port))
@@ -179,6 +164,7 @@ class ConsumerServer:
 
 
 if __name__ == "__main__":
+    
     
     # --- Start Consumer ---
     consumer_server = ConsumerServer(HOST, PORT)
