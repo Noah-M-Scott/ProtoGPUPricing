@@ -9,6 +9,11 @@ import re
 import hashlib
 from queue import Queue
 from datetime import datetime
+from Cryptodome.Cipher import AES
+from Cryptodome.Random import get_random_bytes
+from Cryptodome.Protocol.KDF import scrypt
+import base64
+#pip install pycryptodome
 
 # ==============================================================================
 #  CONSTANT VARIABLES (Editable)
@@ -20,7 +25,6 @@ PORT = 65432        # Server port to listen on
 
 # --- Producer (Type A) Constants ---
 NUM_PRODUCERS = 4  # The number of producer threads to create.
-NODE_NUMEBER = 0   # Index of the current node
 
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
@@ -46,17 +50,32 @@ def pricing_function(bandwidth: int, compute: int) -> float:
 #  Encryption Function
 # ==============================================================================
 
-def encryption_function(arr):    
+def encryption_function(arr, password):    
     #encrypt
+    """Encrypts plaintext using AES-256 in GCM mode."""
+    salt = get_random_bytes(16)  # Generate a random salt
+    key = scrypt(password.encode(), salt, key_len=32, N=2**14, r=8, p=1) # Derive 256-bit key from password
     
-    m = hashlib.sha256()
-    
-    return hashlib.sha256(arr).digest()
+    cipher = AES.new(key, AES.MODE_GCM)
+    ciphertext, tag = cipher.encrypt_and_digest(arr)
+
+    return {
+        'ciphertext': base64.b64encode(ciphertext).decode('utf-8'),
+        'nonce': base64.b64encode(cipher.nonce).decode('utf-8'),
+        'tag': base64.b64encode(tag).decode('utf-8'),
+        'salt': base64.b64encode(salt).decode('utf-8')
+    }
 
 
 # ==============================================================================
 #  Producer Thread
 # ==============================================================================
+
+def get_local_ip():
+    hostname = socket.gethostname()  # Get the hostname of the local machine
+    local_ip = socket.gethostbyname(hostname)  # Resolve the hostname to an IP address
+    return local_ip
+
 
 def get_files_in_directory(directory_path):
     """
@@ -78,8 +97,8 @@ def producer_packet_manager_func(index: int):
     - Periodically processes (encrypts) and sends data to the consumer.
     """
     
-    thread_name = f"Producer {index + NODE_NUMEBER * NUM_PRODUCERS}"
-    print(f"[Producer {index + NODE_NUMEBER * NUM_PRODUCERS} Manager] Starting.")
+    thread_name = f"{get_local_ip()}.{index}"
+    print(f"[Producer {thread_name} Manager] Starting.")
     
     
     try:
@@ -102,9 +121,12 @@ def producer_packet_manager_func(index: int):
             
             #otherwise...
             
+            #serialize collection
+            payload["data"] = pickle.dumps(payload["data"])
+            
             #do encryption
-            payload["data"] = encryption_function(payload["data"])
-            print(f"[{thread_name}] payload encrypted, took X seconds (DATA VOLUME MEASURE POINT #1)")
+            payload["data"] = encryption_function(payload["data"], "password")
+            #print(f"[{thread_name}] payload encrypted, took X seconds (DATA VOLUME MEASURE POINT #1)")
             
             
             #and send
@@ -115,7 +137,7 @@ def producer_packet_manager_func(index: int):
             length_header = struct.pack("!I", data_length) 
             
             
-            print(f"[{thread_name}] Sending batch of {len(payload['data'])} items.")
+            print(f"[{thread_name}] Sending batch of {len(payload['data']['ciphertext'])} items.")
             client_socket.sendall(length_header + serialized_payload)
         
         
@@ -144,8 +166,8 @@ def producer_thread_func(index: int):
     - Periodically sends data packets to it's manager twin
     """
     
-    thread_name = f"Producer {index + NODE_NUMEBER * NUM_PRODUCERS}"
-    print(f"[Producer {index + NODE_NUMEBER * NUM_PRODUCERS} Sampler] Starting.")
+    thread_name = f"{get_local_ip()}.{index}"
+    print(f"[Producer {thread_name} Sampler] Starting.")
     
     TRACE_FILES = get_files_in_directory("traces")
     
@@ -221,11 +243,13 @@ def producer_thread_func(index: int):
                 
                 # Check if the list is ready to be sent
                 if len(temp_list) >= K_ITEMS:
+                    senttime = time.time()
                     payload = {
-                        "index": index + NODE_NUMEBER * NUM_PRODUCERS,
+                        "index": thread_name,
                         "packet": packet_counter,
                         "amountOwed": amount_owed,
-                        "data": temp_list
+                        "data": temp_list,
+                        "timestamp": senttime
                     }
                     
                     #send to manager
@@ -241,11 +265,13 @@ def producer_thread_func(index: int):
         # --- Termination ---
         # Send any remaining data before closing
         if temp_list:
+            senttime = time.time()
             payload = {
-                "index": index + NODE_NUMEBER * NUM_PRODUCERS,
+                "index": thread_name,
                 "packet":packet_counter,
                 "amountOwed": amount_owed,
-                "data": temp_list
+                "data": temp_list,
+                "timestamp": senttime
             }
             
             #send to manager
