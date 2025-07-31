@@ -17,7 +17,7 @@ PORT = 65432        # Server port to listen on
 
 
 # --- Consumer (Type B) Constants ---
-NUM_PRODUCERS = 4  # The number of producer threads to expect (threads per node * nodes).
+NUM_PRODUCERS = 8  # The number of producer threads to expect (threads per node * nodes).
 LOG_DIR = "consumer_log"
 
 # ==============================================================================
