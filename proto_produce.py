@@ -229,7 +229,6 @@ def producer_thread_func(index: int):
                 except StopIteration:
                     # End of file reached
                     if runs < RUN_TIMES :
-                        print(f"[{thread_name}] Reached end of trace file.")
                         traceIndex = random.randint(0, len(TRACE_FILES) - 1);
                         trace_file_name = TRACE_FILE_NAMES[traceIndex]
                         trace_file      = TRACE_FILES[traceIndex]
