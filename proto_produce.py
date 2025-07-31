@@ -15,7 +15,7 @@ from Cryptodome.Protocol.KDF import scrypt
 import base64
 import sys
 import platform
-#pip install pycryptodome
+#python -m pip install pycryptodome
 
 # ==============================================================================
 #  CONSTANT VARIABLES (Editable)
