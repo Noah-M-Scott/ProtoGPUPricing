@@ -14,6 +14,7 @@ from Cryptodome.Random import get_random_bytes
 from Cryptodome.Protocol.KDF import scrypt
 import base64
 import sys
+import platform
 #pip install pycryptodome
 
 # ==============================================================================
@@ -167,6 +168,14 @@ def producer_thread_func(index: int):
     - Reads data from its assigned trace file.
     - Periodically sends data packets to it's manager twin
     """
+    
+    #to ensure time requirements are met
+    if platform.system() != 'Windows':
+        try:
+            os.nice(-20)  # Example: set to highest priority
+        except OSError as e:
+            print(f"Warning: Failed to set nice value: {e}. Insufficient privileges.")
+    
     
     thread_name = f"{get_local_ip()}.{index}"
     print(f"[Producer {thread_name} Sampler] Starting.")
