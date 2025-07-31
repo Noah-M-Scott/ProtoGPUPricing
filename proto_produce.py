@@ -169,7 +169,7 @@ def producer_thread_func(index: int):
     - Periodically sends data packets to it's manager twin
     """
     
-    #to ensure time requirements are met
+    #to ensure time requirements are met, doesn't work on windows
     if platform.system() != 'Windows':
         try:
             os.nice(-20)  # Example: set to highest priority
@@ -180,19 +180,27 @@ def producer_thread_func(index: int):
     thread_name = f"{get_local_ip()}.{index}"
     print(f"[Producer {thread_name} Sampler] Starting.")
     
-    TRACE_FILES = get_files_in_directory("traces")
+    #copy trace files into a buffer to eliminate disk delay
+    TRACE_FILE_NAMES = get_files_in_directory("traces")
+    TRACE_FILES = []
+    for i in TRACE_FILE_NAMES:
+        with open(i, 'r') as f:
+            TRACE_FILES.append(f.read())
+    
     
     try:
         # --- File and variable setup ---
-        trace_file_name = TRACE_FILES[random.randint(0, len(TRACE_FILES) - 1)]
-        with open(trace_file_name, 'r') as f:
-            # Read all whitespace/'|'-separated values at once and create an iterator
-            values = iter(re.split(r"[\s\|]+", f.read()))
-            next(values) #burn headers
-            next(values)
-            next(values)
-            next(values)
+        traceIndex = random.randint(0, len(TRACE_FILES) - 1);
+        trace_file_name = TRACE_FILE_NAMES[traceIndex]
+        trace_file      = TRACE_FILES[traceIndex]
+        # Read all whitespace/'|'-separated values at once and create an iterator
+        values = iter(re.split(r"[\s\|]+", trace_file))
+        next(values) #burn headers
+        next(values)
+        next(values)
+        next(values)
         print(f"[{thread_name}] trace selected is {trace_file_name}")
+        
         
         # --- State variables ---
         temp_list = []
@@ -222,14 +230,15 @@ def producer_thread_func(index: int):
                     # End of file reached
                     if runs < RUN_TIMES :
                         print(f"[{thread_name}] Reached end of trace file.")
-                        trace_file_name = TRACE_FILES[random.randint(0, len(TRACE_FILES) - 1)]
-                        with open(trace_file_name, 'r') as f:
-                            # Read all comma-separated values at once and create an iterator
-                            values = iter(re.split(r"[\s\|]+", f.read()))
-                            next(values) #burn headers
-                            next(values)
-                            next(values)
-                            next(values)
+                        traceIndex = random.randint(0, len(TRACE_FILES) - 1);
+                        trace_file_name = TRACE_FILE_NAMES[traceIndex]
+                        trace_file      = TRACE_FILES[traceIndex]
+                        # Read all whitespace/'|'-separated values at once and create an iterator
+                        values = iter(re.split(r"[\s\|]+", trace_file))
+                        next(values) #burn headers
+                        next(values)
+                        next(values)
+                        next(values)
                         print(f"[{thread_name}] trace selected is {trace_file_name}")
                         
                         runs += 1
