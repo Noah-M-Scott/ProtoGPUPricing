@@ -26,7 +26,7 @@ HOST = '127.0.0.1'  # Server host
 PORT = 65432        # Server port to listen on
 
 # --- Producer (Type A) Constants ---
-NUM_PRODUCERS = 4  # The number of producer threads to create.
+NUM_PRODUCERS = 8  # The number of producer threads to create.
 
 # Array of trace file names. Must have at least NUM_PRODUCERS elements.
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
