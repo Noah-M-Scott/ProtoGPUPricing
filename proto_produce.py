@@ -1,5 +1,6 @@
 import socket
-import threading
+import multiprocessing
+from multiprocessing import Process, Lock, Condition, Value, Array, Queue
 import time
 import pickle
 import os
@@ -7,7 +8,6 @@ import random
 import struct
 import re
 import hashlib
-from queue import Queue
 from datetime import datetime
 from Cryptodome.Cipher import AES
 from Cryptodome.Random import get_random_bytes
@@ -15,7 +15,9 @@ from Cryptodome.Protocol.KDF import scrypt
 import base64
 import sys
 import platform
-#python -m pip install pycryptodome
+import ctypes
+#pip install pycryptodome
+
 
 # ==============================================================================
 #  CONSTANT VARIABLES (Editable)
@@ -32,13 +34,7 @@ NUM_PRODUCERS = 8  # The number of producer threads to create.
 N_MICROSECONDS = 10    # Interval to read from trace file (This is swapped out for a file defined per line latency)
 M_MICROSECONDS = 50    # Interval to process data and add to log (sampling rate)
 K_ITEMS = 131072       # Number of items in the temporary list before sending.
-RUN_TIMES = 1000       # Number of times to rerun the trace
-
-# Thread Queues
-THREAD_QUEUES = []
-for i in range(0, NUM_PRODUCERS):
-    THREAD_QUEUES.append(Queue())
-
+RUN_TIMES = 3          # Number of times to rerun the trace
 
 # ==============================================================================
 #  Pricing Function
@@ -69,6 +65,7 @@ def encryption_function(arr, password):
     }
 
 
+
 # ==============================================================================
 #  Producer Thread
 # ==============================================================================
@@ -91,7 +88,7 @@ def get_files_in_directory(directory_path):
     return files
 
 
-def producer_packet_manager_func(index: int):
+def producer_packet_manager_func(index: int, bufQ):
     """
     The helper function for a producer thread.
     - Connects to the consumer's socket.
@@ -109,13 +106,10 @@ def producer_packet_manager_func(index: int):
         client_socket.connect((HOST, PORT))
         print(f"[{thread_name}] Connected to consumer at {HOST}:{PORT}")
         
-        # --- State variables ---
-        last_read_time = time.perf_counter_ns()
-        last_process_time = time.perf_counter_ns()
         
         # --- Main loop ---
         while True:
-            payload = THREAD_QUEUES[index].get()
+            payload = bufQ.get()
             
             #null payload for shutdown
             if payload['index'] == -1:
@@ -162,7 +156,7 @@ def producer_packet_manager_func(index: int):
     return
 
 
-def producer_thread_func(index: int):
+def producer_thread_func(index: int, bufQ):
     """
     The main function for a producer thread.
     - Reads data from its assigned trace file.
@@ -225,7 +219,7 @@ def producer_thread_func(index: int):
                     compute = int(float(next(values)) * 100)
                     bandwidth = int(float(next(values)) * 100)
                     #print(f"[{thread_name}] Read: lt={latency}, bw={bandwidth}, comp={compute}") # Uncomment for verbose logging
-                    last_read_time = current_time
+                    
                 except StopIteration:
                     # End of file reached
                     if runs < RUN_TIMES :
@@ -244,6 +238,8 @@ def producer_thread_func(index: int):
                     else:
                         print(f"[{thread_name}] Has finished runs.")
                         break # Exit the main while loop
+                
+                last_read_time = time.perf_counter_ns()
             
             
             # --- Task 2: Process and potentially send data every M microseconds ---
@@ -258,8 +254,6 @@ def producer_thread_func(index: int):
                 # Add to temporary list
                 temp_list.append((bandwidth, compute))
                 
-                last_process_time = current_time
-                
                 # Check if the list is ready to be sent
                 if len(temp_list) >= K_ITEMS:
                     senttime = 0;
@@ -272,14 +266,18 @@ def producer_thread_func(index: int):
                     }
                     
                     #send to manager
-                    THREAD_QUEUES[index].put(payload)
+                    bufQ.put(payload)
                     
                     # Reset the temporary list for the next batch
                     temp_list = []
                     
                     #next packet
                     packet_counter += 1
-        
+                
+                
+                last_process_time = time.perf_counter_ns()
+            
+            
         
         # --- Termination ---
         # Send any remaining data before closing
@@ -294,12 +292,12 @@ def producer_thread_func(index: int):
             }
             
             #send to manager
-            THREAD_QUEUES[index].put(payload)
+            bufQ.put(payload)
         
         
         # Send finish comand to manager
         payload = { "index": -1 }
-        THREAD_QUEUES[index].put(payload)
+        bufQ.put(payload)
         
         print(f"[{thread_name}] Finished.")
         print(f"[{thread_name}] Average sample time was {actualTime_accum / actualTime_count} over {actualTime_count} samples")
@@ -327,23 +325,32 @@ if __name__ == "__main__":
         exit()
     
     
-    
     # --- Start Producers ---
     producer_threads = []
+    manager_threads = []
     for i in range(NUM_PRODUCERS):
         
+        bufQ = Queue()
+        
         #manager
-        thread = threading.Thread(target=producer_packet_manager_func, args=(i,))
+        thread = multiprocessing.Process(target=producer_packet_manager_func, args=(i, bufQ))
         producer_threads.append(thread)
         thread.start()
         
+        #needed to avoid deadlock
+        time.sleep(1)
+        
         #sampler
-        thread = threading.Thread(target=producer_thread_func, args=(i,))
-        producer_threads.append(thread)
+        thread = multiprocessing.Process(target=producer_thread_func, args=(i, bufQ))
+        manager_threads.append(thread)
         thread.start()
+        
     
     
     # --- Wait for all threads to complete ---
+    for thread in manager_threads:
+        thread.join()
+    
     for thread in producer_threads:
         thread.join()
     
