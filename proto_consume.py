@@ -1,5 +1,5 @@
 import socket
-import threading
+import multiprocessing
 import time
 import pickle
 import os
@@ -17,12 +17,26 @@ PORT = 65432        # Server port to listen on
 
 
 # --- Consumer (Type B) Constants ---
-NUM_PRODUCERS = 8  # The number of producer threads to expect (threads per node * nodes).
+NUM_PRODUCERS = (8*50)  # The number of producer threads to expect (threads per node * nodes).
 LOG_DIR = "consumer_log"
 
 # ==============================================================================
 #  Consumer Thread
 # ==============================================================================
+
+#def decrypt_aes_gcm(encrypted_data, password):
+#    """Decrypts data encrypted with AES-256 in GCM mode."""
+#    ciphertext = base64.b64decode(encrypted_data['ciphertext'])
+#    nonce = base64.b64decode(encrypted_data['nonce'])
+#    tag = base64.b64decode(encrypted_data['tag'])
+#    salt = base64.b64decode(encrypted_data['salt'])
+#
+#    key = scrypt(password.encode(), salt, key_len=32, N=2**14, r=8, p=1)
+#
+#    cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
+#    plaintext = cipher.decrypt_and_verify(ciphertext, tag)
+#    return plaintext.decode('utf-8')
+
 
 class ConsumerServer:
     """
@@ -37,10 +51,10 @@ class ConsumerServer:
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.producers_done_count = 0
         self.DROP_COUNTER = 0
-        self.lock = threading.Lock() # To protect the done count
-        self.buffer_lock = threading.Lock() # log lock
+        self.lock = multiprocessing.Lock() # To protect the done count
+        self.buffer_lock = multiprocessing.Lock() # log lock
         self.packet_counts = {}
-        self.shutdown_event = threading.Event()
+        self.shutdown_event = multiprocessing.Event()
 
     def _increment_done_count(self):
         with self.lock:
@@ -128,7 +142,7 @@ class ConsumerServer:
                 f.write(f"{thread_index}, {sentstamp}, {timestamp}\n")
             
         # print(f"[Consumer Server] Wrote record from Producer {thread_index} to {buffer_file}")
-
+    
     def start(self):
         """Starts the consumer server."""
         # Create directory for buffers if it doesn't exist
@@ -152,7 +166,7 @@ class ConsumerServer:
             try:
                 conn, addr = self.server_socket.accept()
                 # Spawn a new thread to handle this client
-                handler_thread = threading.Thread(target=self._handle_client, args=(conn, addr))
+                handler_thread = multiprocessing.Process(target=self._handle_client, args=(conn, addr))
                 handler_thread.daemon = True # Allows main thread to exit even if handlers are running
                 handler_thread.start()
             except socket.timeout:
@@ -168,7 +182,7 @@ if __name__ == "__main__":
     
     # --- Start Consumer ---
     consumer_server = ConsumerServer(HOST, PORT)
-    consumer_thread = threading.Thread(target=consumer_server.start)
+    consumer_thread = multiprocessing.Process(target=consumer_server.start)
     consumer_thread.start()
 
     # Give the server a moment to start up
