@@ -232,7 +232,7 @@ def producer_thread_func(index: int, bufQ):
                         next(values)
                         next(values)
                         next(values)
-                        print(f"[{thread_name}] trace selected is {trace_file_name}")
+                        #print(f"[{thread_name}] trace selected is {trace_file_name}")
                         
                         runs += 1
                     else:
@@ -357,5 +357,6 @@ if __name__ == "__main__":
 
     print("\n[Main] All threads have completed their execution.")
     
+
 
 
