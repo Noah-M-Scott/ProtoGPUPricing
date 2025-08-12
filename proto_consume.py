@@ -118,7 +118,7 @@ class ConsumerServer:
         """
         thread_index = payload['index']
         sentstamp = payload['timestamp']
-        timestamp = time.time()
+        timestamp = time.time_ns();
         
         #if self.packet_counts.get(thread_index) == None :
         #    self.packet_counts[thread_index] = payload['packet']
@@ -139,7 +139,7 @@ class ConsumerServer:
         # Lock the specific file for this thread to prevent race conditions
         with self.buffer_lock:
             with open(log_file, 'a') as f:
-                f.write(f"{thread_index}, {sentstamp}, {timestamp}\n")
+                f.write(f"{thread_index}, {sentstamp}, {timestamp}, {timestamp - sentstamp}\n")
             
         # print(f"[Consumer Server] Wrote record from Producer {thread_index} to {buffer_file}")
     
@@ -153,7 +153,7 @@ class ConsumerServer:
         # --- prep log file ---
         log_file = os.path.join(LOG_DIR, "consumer_log.csv")
         with open(log_file, 'w') as f:
-            f.write("id, sent_time, recv_time\n")
+            f.write("id, sent_time, recv_time, delta\n")
 
         self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server_socket.bind((self.host, self.port))
@@ -193,3 +193,4 @@ if __name__ == "__main__":
 
     print("\n[Main] All threads have completed their execution.")
     
+
