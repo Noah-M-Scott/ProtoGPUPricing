@@ -125,7 +125,7 @@ def producer_packet_manager_func(index: int, bufQ):
             #print(f"[{thread_name}] payload encrypted, took X seconds (DATA VOLUME MEASURE POINT #1)")
             
             #mark time
-            payload["timestamp"] = time.time();
+            payload["timestamp"] = time.time_ns();
             
             #and send
             serialized_payload = pickle.dumps(payload)
@@ -357,6 +357,7 @@ if __name__ == "__main__":
 
     print("\n[Main] All threads have completed their execution.")
     
+
 
 
 
